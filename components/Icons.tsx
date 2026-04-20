@@ -1,111 +1,277 @@
-export const IconShield = () => (
-  <svg width="30" height="30" viewBox="0 0 30 30" fill="none" stroke="#2d2d2d" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round">
-    <path d="M15 3L5 8v6c0 6 4.5 11 10 12.5C20.5 25 25 20 25 14V8L15 3z"/>
-  </svg>
-);
-export const IconClock = () => (
-  <svg width="30" height="30" viewBox="0 0 30 30" fill="none" stroke="#2d2d2d" strokeWidth="2" strokeLinecap="round">
-    <circle cx="15" cy="15" r="11"/>
-    <path d="M15 8v7l4 4"/>
-  </svg>
-);
-export const IconHeart = () => (
-  <svg width="30" height="30" viewBox="0 0 30 30" fill="none" stroke="#2d2d2d" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round">
-    <path d="M15 25S4 18 4 11a6 6 0 0 1 11-3.4A6 6 0 0 1 26 11c0 7-11 14-11 14z"/>
-  </svg>
-);
-export const IconStar = () => (
-  <svg width="30" height="30" viewBox="0 0 30 30" fill="none" stroke="#2d2d2d" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round">
-    <path d="M15 3l3.5 7 7.5 1-5.5 5.3 1.3 7.7L15 20.5l-6.8 3.5 1.3-7.7L4 11l7.5-1z"/>
-  </svg>
-);
-export const IconLeaf = () => (
-  <svg width="30" height="30" viewBox="0 0 30 30" fill="none" stroke="#2d2d2d" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round">
-    <path d="M15 4C15 4 6 9 6 17a9 9 0 0 0 18 0C24 9 15 4 15 4z"/>
-    <path d="M15 26v-9"/>
-  </svg>
-);
+// Наши Преимущества
 export const IconClean = () => (
-  <svg width="40" height="40" viewBox="0 0 40 40" fill="none" stroke="#2d2d2d" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round">
-    <circle cx="14" cy="14" r="5"/>
-    <circle cx="14" cy="14" r="2"/>
-    <path d="M14 4v4M14 20v4M4 14h4M20 14h4"/>
-    <path d="M22 22l6 6"/>
+  <img src="/images/adv-1.png" width={30} height={30} alt="" />
+);
+
+export const IconShield = () => (
+  <svg width="30" height="30" viewBox="0 0 30 30" fill="none" xmlns="http://www.w3.org/2000/svg">
+    <g clipPath="url(#clip_shield)">
+      <mask id="mask_shield" style={{maskType:"luminance"}} maskUnits="userSpaceOnUse" x="0" y="0" width="30" height="30">
+        <path d="M28.75 1.25V28.75H1.25V1.25H28.75Z" fill="white" stroke="white" strokeWidth="2.5"/>
+      </mask>
+      <g mask="url(#mask_shield)">
+        <path d="M13.1125 2.78818L6.87504 5.13818C5.43754 5.67568 4.26254 7.37568 4.26254 8.90068V18.1881C4.26254 19.6631 5.23754 21.6006 6.42504 22.4881L11.8 26.5006C13.5625 27.8256 16.4625 27.8256 18.225 26.5006L23.6 22.4881C24.7875 21.6006 25.7625 19.6631 25.7625 18.1881V8.90068C25.7625 7.36318 24.5875 5.66318 23.15 5.12568L16.9125 2.78818C15.85 2.40068 14.15 2.40068 13.1125 2.78818Z" stroke="#005E3F" strokeWidth="2.5" strokeLinecap="round" strokeLinejoin="round"/>
+      </g>
+    </g>
+    <defs><clipPath id="clip_shield"><rect width="30" height="30" fill="white"/></clipPath></defs>
   </svg>
 );
+
+export const IconClock = () => (
+  <svg width="30" height="30" viewBox="0 0 30 30" fill="none" xmlns="http://www.w3.org/2000/svg">
+    <g clipPath="url(#clip_clock)">
+      <mask id="mask_clock" style={{maskType:"luminance"}} maskUnits="userSpaceOnUse" x="0" y="0" width="30" height="30">
+        <path d="M28.75 1.25V28.75H1.25V1.25H28.75Z" fill="white" stroke="white" strokeWidth="2.5"/>
+      </mask>
+      <g mask="url(#mask_clock)">
+        <path d="M27.5 15C27.5 21.9 21.9 27.5 15 27.5C8.1 27.5 2.5 21.9 2.5 15C2.5 8.1 8.1 2.5 15 2.5C21.9 2.5 27.5 8.1 27.5 15Z" stroke="#005E3F" strokeWidth="2.5" strokeLinecap="round" strokeLinejoin="round"/>
+        <path d="M19.6375 18.9747L15.7625 16.6622C15.0875 16.2622 14.5375 15.2997 14.5375 14.5122V9.38721" stroke="#005E3F" strokeWidth="2.5" strokeLinecap="round" strokeLinejoin="round"/>
+      </g>
+    </g>
+    <defs><clipPath id="clip_clock"><rect width="30" height="30" fill="white"/></clipPath></defs>
+  </svg>
+);
+
+export const IconHeart = () => (
+  <svg width="30" height="30" viewBox="0 0 30 30" fill="none" xmlns="http://www.w3.org/2000/svg">
+    <g clipPath="url(#clip_heart)">
+      <mask id="mask_heart" style={{maskType:"luminance"}} maskUnits="userSpaceOnUse" x="0" y="0" width="30" height="30">
+        <path d="M28.75 1.25V28.75H1.25V1.25H28.75Z" fill="white" stroke="white" strokeWidth="2.5"/>
+      </mask>
+      <g mask="url(#mask_heart)">
+        <path d="M15.775 26.012C15.35 26.162 14.65 26.162 14.225 26.012C10.6 24.7745 2.5 19.612 2.5 10.862C2.5 6.99951 5.6125 3.87451 9.45 3.87451C11.725 3.87451 13.7375 4.97451 15 6.67451C16.2625 4.97451 18.2875 3.87451 20.55 3.87451C24.3875 3.87451 27.5 6.99951 27.5 10.862C27.5 19.612 19.4 24.7745 15.775 26.012Z" stroke="#005E3F" strokeWidth="2.5" strokeLinecap="round" strokeLinejoin="round"/>
+      </g>
+    </g>
+    <defs><clipPath id="clip_heart"><rect width="30" height="30" fill="white"/></clipPath></defs>
+  </svg>
+);
+
+export const IconStar = () => (
+  <svg width="30" height="30" viewBox="0 0 30 30" fill="none" xmlns="http://www.w3.org/2000/svg">
+    <g clipPath="url(#clip_star)">
+      <mask id="mask_star" style={{maskType:"luminance"}} maskUnits="userSpaceOnUse" x="0" y="0" width="30" height="30">
+        <path d="M28.75 1.25V28.75H1.25V1.25H28.75Z" fill="white" stroke="white" strokeWidth="2.5"/>
+      </mask>
+      <g mask="url(#mask_star)">
+        <path opacity="0.4" d="M2.5 15H4.425" stroke="#005E3F" strokeWidth="2.5" strokeLinecap="round" strokeLinejoin="round"/>
+        <path opacity="0.4" d="M25.6739 15H27.4989" stroke="#005E3F" strokeWidth="2.5" strokeLinecap="round" strokeLinejoin="round"/>
+        <path d="M6.16211 23.8375L7.52461 22.475" stroke="#005E3F" strokeWidth="2.5" strokeLinecap="round" strokeLinejoin="round"/>
+        <path d="M22.5489 7.44998L23.8364 6.16248" stroke="#005E3F" strokeWidth="2.5" strokeLinecap="round" strokeLinejoin="round"/>
+        <path opacity="0.4" d="M15 27.5V25.575" stroke="#005E3F" strokeWidth="2.5" strokeLinecap="round" strokeLinejoin="round"/>
+        <path opacity="0.4" d="M15 4.325V2.5" stroke="#005E3F" strokeWidth="2.5" strokeLinecap="round" strokeLinejoin="round"/>
+        <path d="M23.8381 23.8375L22.4756 22.475" stroke="#005E3F" strokeWidth="2.5" strokeLinecap="round" strokeLinejoin="round"/>
+        <path d="M7.44961 7.44998L6.16211 6.16248" stroke="#005E3F" strokeWidth="2.5" strokeLinecap="round" strokeLinejoin="round"/>
+        <path d="M15.3509 9.4249L16.7009 13.0749C16.7384 13.1749 16.8259 13.2624 16.9259 13.2999L20.5759 14.6499C20.9009 14.7749 20.9009 15.2374 20.5759 15.3499L16.9259 16.6999C16.8259 16.7374 16.7384 16.8249 16.7009 16.9249L15.3509 20.5749C15.2259 20.8999 14.7634 20.8999 14.6509 20.5749L13.3009 16.9249C13.2634 16.8249 13.1759 16.7374 13.0759 16.6999L9.42588 15.3499C9.10088 15.2249 9.10088 14.7624 9.42588 14.6499L13.0759 13.2999C13.1759 13.2624 13.2634 13.1749 13.3009 13.0749L14.6509 9.4249C14.7759 9.0999 15.2384 9.0999 15.3509 9.4249Z" stroke="#005E3F" strokeWidth="2.5" strokeLinecap="round" strokeLinejoin="round"/>
+      </g>
+    </g>
+    <defs><clipPath id="clip_star"><rect width="30" height="30" fill="white"/></clipPath></defs>
+  </svg>
+);
+
+export const IconLeaf = () => (
+  <svg width="30" height="30" viewBox="0 0 30 30" fill="none" xmlns="http://www.w3.org/2000/svg">
+    <g clipPath="url(#clip_leaf)">
+      <mask id="mask_leaf" style={{maskType:"luminance"}} maskUnits="userSpaceOnUse" x="0" y="0" width="30" height="30">
+        <path d="M28.75 1.25V28.75H1.25V1.25H28.75Z" fill="white" stroke="white" strokeWidth="2.5"/>
+      </mask>
+      <g mask="url(#mask_leaf)">
+        <path d="M20.2125 12.5754H9.78746C8.31247 12.5754 7.79997 11.5879 8.66247 10.3879L13.875 3.08789C14.4875 2.21289 15.5125 2.21289 16.1125 3.08789L21.325 10.3879C22.2 11.5879 21.6875 12.5754 20.2125 12.5754Z" stroke="#005E3F" strokeWidth="2.5" strokeLinecap="round" strokeLinejoin="round"/>
+        <path d="M21.9875 22.5007H8.025C6.05 22.5007 5.375 21.1882 6.5375 19.5882L11.525 12.5757H18.4875L23.475 19.5882C24.6375 21.1882 23.9625 22.5007 21.9875 22.5007Z" stroke="#005E3F" strokeWidth="2.5" strokeLinecap="round" strokeLinejoin="round"/>
+        <path d="M15 27.5V22.5" stroke="#005E3F" strokeWidth="2.5" strokeLinecap="round" strokeLinejoin="round"/>
+      </g>
+    </g>
+    <defs><clipPath id="clip_leaf"><rect width="30" height="30" fill="white"/></clipPath></defs>
+  </svg>
+);
+
+// Что входит в услугу
 export const IconCheck = () => (
-  <svg width="30" height="30" viewBox="0 0 30 30" fill="none">
-    <circle cx="15" cy="15" r="13" fill="#00db9a"/>
-    <path d="M9 15l4 4 8-8" stroke="white" strokeWidth="2.5" strokeLinecap="round" strokeLinejoin="round"/>
+  <svg width="30" height="30" viewBox="0 0 30 30" fill="none" xmlns="http://www.w3.org/2000/svg">
+    <g clipPath="url(#clip_check)">
+      <mask id="mask_check" style={{maskType:"luminance"}} maskUnits="userSpaceOnUse" x="0" y="0" width="30" height="30">
+        <path d="M30 0H0V30H30V0Z" fill="white"/>
+      </mask>
+      <g mask="url(#mask_check)">
+        <path d="M15 2.5C8.1125 2.5 2.5 8.1125 2.5 15C2.5 21.8875 8.1125 27.5 15 27.5C21.8875 27.5 27.5 21.8875 27.5 15C27.5 8.1125 21.8875 2.5 15 2.5ZM20.975 12.125L13.8875 19.2125C13.7125 19.3875 13.475 19.4875 13.225 19.4875C12.975 19.4875 12.7375 19.3875 12.5625 19.2125L9.025 15.675C8.6625 15.3125 8.6625 14.7125 9.025 14.35C9.3875 13.9875 9.9875 13.9875 10.35 14.35L13.225 17.225L19.65 10.8C20.0125 10.4375 20.6125 10.4375 20.975 10.8C21.3375 11.1625 21.3375 11.75 20.975 12.125Z" fill="#00D865"/>
+      </g>
+    </g>
+    <defs><clipPath id="clip_check"><rect width="30" height="30" fill="white"/></clipPath></defs>
   </svg>
 );
+
+// Пакетные предложения — STROKE ONLY
 export const IconStar2 = () => (
-  <svg width="20" height="20" viewBox="0 0 20 20" fill="white">
-    <path d="M10 2l2.5 5 5.5.8-4 3.9 1 5.5L10 14.8l-5 2.4 1-5.5L2 7.8l5.5-.8z"/>
+  <svg width="20" height="20" viewBox="0 0 20 20" fill="none" xmlns="http://www.w3.org/2000/svg">
+    <path d="M14.7168 18.892C14.2751 18.892 13.7084 18.7503 13.0001 18.3337L10.5084 16.8587C10.2501 16.7087 9.7501 16.7087 9.5001 16.8587L7.00012 18.3337C5.52512 19.2087 4.65845 18.8587 4.26679 18.5753C3.88345 18.292 3.28345 17.567 3.67512 15.9003L4.26679 13.342C4.33345 13.0753 4.20012 12.617 4.00012 12.417L1.93345 10.3503C0.900119 9.317 0.983452 8.43367 1.12512 8.00034C1.26679 7.56701 1.71679 6.80034 3.15012 6.55867L5.80845 6.11701C6.05845 6.07534 6.41678 5.80868 6.52512 5.58367L8.00012 2.64201C8.66677 1.30034 9.54177 1.10034 10.0001 1.10034C10.4584 1.10034 11.3334 1.30034 12.0001 2.64201L13.4668 5.57534C13.5834 5.80034 13.9418 6.06701 14.1918 6.10868L16.8501 6.55034C18.2918 6.79201 18.7418 7.55868 18.8751 7.99201C19.0084 8.42533 19.0918 9.30867 18.0668 10.342L16.0001 12.417C15.8001 12.617 15.6751 13.067 15.7334 13.342L16.3251 15.9003C16.7084 17.567 16.1168 18.292 15.7334 18.5753C15.5251 18.7253 15.1918 18.892 14.7168 18.892Z" stroke="black" strokeWidth="1.5" strokeLinecap="round" strokeLinejoin="round"/>
   </svg>
 );
+
+// Дополнительные услуги
 export const IconBroom = () => (
-  <svg width="29" height="29" viewBox="0 0 29 29" fill="none" stroke="white" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round">
-    <path d="M5 24l8-8M14 5l10 10-5 5-10-10z"/>
-    <path d="M5 24c2 0 4-1 5-3"/>
+  <svg width="29" height="29" viewBox="0 0 29 29" fill="none" xmlns="http://www.w3.org/2000/svg">
+    <mask id="mask_broom" style={{maskType:"luminance"}} maskUnits="userSpaceOnUse" x="0" y="0" width="29" height="29">
+      <path d="M29 0H0V29H29V0Z" fill="white"/>
+    </mask>
+    <g mask="url(#mask_broom)">
+      <path d="M11.9263 6.85043L7.79382 9.36379L5.90883 6.27046C5.22008 5.13462 5.58257 3.63629 6.7184 2.94754C7.85423 2.25879 9.35257 2.62128 10.0413 3.75711L11.9263 6.85043Z" stroke="white" strokeWidth="1.5" strokeLinecap="round" strokeLinejoin="round"/>
+      <path d="M14.2825 11.0679L10.4642 13.3879C8.24082 14.7413 7.56414 17.4721 8.63956 19.6471L11.1166 24.6979C11.9141 26.3292 13.8475 26.8971 15.3942 25.9425L23.1637 21.2179C24.7225 20.2754 25.0971 18.3058 24.0217 16.8438L20.6746 12.3246C19.2246 10.3671 16.5058 9.7146 14.2825 11.0679Z" stroke="white" strokeWidth="1.5" strokeLinecap="round" strokeLinejoin="round"/>
+      <path d="M12.9977 6.16064L6.80544 9.93137L9.31925 14.0595L15.5115 10.2888L12.9977 6.16064Z" stroke="white" strokeWidth="1.5" strokeLinecap="round" strokeLinejoin="round"/>
+      <path d="M17.2914 20.313L19.2851 23.5877" stroke="white" strokeWidth="1.5" strokeLinecap="round" strokeLinejoin="round"/>
+      <path d="M14.1979 22.1963L16.1917 25.471" stroke="white" strokeWidth="1.5" strokeLinecap="round" strokeLinejoin="round"/>
+      <path d="M20.3846 18.4272L22.3783 21.7018" stroke="white" strokeWidth="1.5" strokeLinecap="round" strokeLinejoin="round"/>
+    </g>
   </svg>
 );
-export const IconPhone = () => (
-  <svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="#029061" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round">
-    <path d="M22 16.9v3a2 2 0 0 1-2.2 2A19.8 19.8 0 0 1 3.1 4.2 2 2 0 0 1 5 2h3a2 2 0 0 1 2 1.7c.1 1 .4 2 .7 2.9a2 2 0 0 1-.5 2.1L9.1 9.9a16 16 0 0 0 6 6l1.2-1.2a2 2 0 0 1 2-.5c1 .3 2 .6 2.9.7A2 2 0 0 1 22 16.9z"/>
-  </svg>
-);
-export const IconEnvelope = () => (
-  <svg width="29" height="29" viewBox="0 0 29 29" fill="none" stroke="white" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round">
-    <rect x="3" y="6" width="23" height="17" rx="2"/>
-    <path d="M3 8l11.5 8L26 8"/>
-  </svg>
-);
-export const IconArrow = () => (
-  <svg width="16" height="10" viewBox="0 0 16 10" fill="none" stroke="white" strokeWidth="2" strokeLinecap="round">
-    <path d="M1 5h14M10 1l5 4-5 4"/>
-  </svg>
-);
-export const IconArrowGreen = () => (
-  <svg width="16" height="10" viewBox="0 0 16 10" fill="none" stroke="white" strokeWidth="2" strokeLinecap="round">
-    <path d="M1 5h14M10 1l5 4-5 4"/>
-  </svg>
-);
+
+// Профессиональное оборудование — STROKE ONLY (Kirby)
 export const IconFlash = () => (
-  <svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="#2d2d2d" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round">
-    <path d="M13 2L4 14h8l-1 8 9-12h-8z"/>
+  <svg width="24" height="24" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">
+    <path d="M9.99008 22.7506C9.79008 22.7506 9.63008 22.7106 9.51008 22.6606C9.11008 22.5106 8.43008 22.0206 8.43008 20.4706V14.0206H6.09008C4.75008 14.0206 4.27008 13.3906 4.10008 13.0206C3.93008 12.6406 3.78008 11.8706 4.66008 10.8606L12.2301 2.26062C13.2501 1.10062 14.0801 1.18062 14.4801 1.33062C14.8801 1.48062 15.5601 1.97062 15.5601 3.52062V9.97062H17.9001C19.2401 9.97062 19.7201 10.6006 19.8901 10.9706C20.0601 11.3506 20.2101 12.1206 19.3301 13.1306L11.7601 21.7306C11.0501 22.5406 10.4301 22.7506 9.99008 22.7506Z" stroke="#029061" strokeWidth="1.5" strokeLinecap="round" strokeLinejoin="round"/>
   </svg>
 );
+
 export const IconDrop = () => (
-  <svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="#2d2d2d" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round">
-    <path d="M12 2C12 2 5 10 5 15a7 7 0 0 0 14 0C19 10 12 2 12 2z"/>
+  <svg width="24" height="24" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">
+    <g clipPath="url(#clip_drop)">
+      <mask id="mask_drop" style={{maskType:"luminance"}} maskUnits="userSpaceOnUse" x="0" y="0" width="24" height="24">
+        <path d="M24 0H0V24H24V0Z" fill="white"/>
+      </mask>
+      <g mask="url(#mask_drop)">
+        <path d="M3.90991 13.9C3.90991 18.36 7.53995 22 12.0099 22C16.48 22 20.11 18.37 20.11 13.91C20.12 8.48 14.5 3.67 12.6099 2.21C12.2499 1.93 11.7499 1.93 11.3899 2.21C10.859 2.61523 10.0382 3.27662 9.1318 4.13963" stroke="#0A0A0A" strokeWidth="1.5" strokeMiterlimit="10" strokeLinecap="round"/>
+      </g>
+      <g clipPath="url(#clip_drop2)">
+        <mask id="mask_drop2" style={{maskType:"luminance"}} maskUnits="userSpaceOnUse" x="2" y="4" width="8" height="8">
+          <path d="M10 4H2V12H10V4Z" fill="white"/>
+        </mask>
+        <g mask="url(#mask_drop2)">
+          <path d="M6.20334 4.7365C6.08334 4.64317 5.91668 4.64317 5.79668 4.7365C5.16336 5.21984 3.29335 6.7965 3.30335 8.63317C3.30335 10.1198 4.51336 11.3332 6.00334 11.3332C7.49334 11.3332 8.70334 10.1232 8.70334 8.6365C8.70668 6.8265 6.83334 5.22317 6.20334 4.7365Z" stroke="#0A0A0A" strokeWidth="1.5" strokeMiterlimit="10"/>
+        </g>
+      </g>
+    </g>
+    <defs>
+      <clipPath id="clip_drop"><rect width="24" height="24" fill="white"/></clipPath>
+      <clipPath id="clip_drop2"><rect width="8" height="8" fill="white" transform="translate(2 4)"/></clipPath>
+    </defs>
   </svg>
 );
+
 export const IconWind = () => (
-  <svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="#2d2d2d" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round">
-    <path d="M9 6a3 3 0 1 1 6 0c0 2-3 2-3 2H3"/>
-    <path d="M9 12H3M18 12a3 3 0 1 1 0 6H3"/>
+  <svg width="24" height="24" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">
+    <g clipPath="url(#clip_wind)">
+      <mask id="mask_wind" style={{maskType:"luminance"}} maskUnits="userSpaceOnUse" x="0" y="0" width="24" height="24">
+        <path d="M24 0H0V24H24V0Z" fill="white"/>
+      </mask>
+      <g mask="url(#mask_wind)">
+        <path d="M18.5 22.75C16.16 22.75 14.25 20.84 14.25 18.5V18C14.25 17.59 14.59 17.25 15 17.25C15.41 17.25 15.75 17.59 15.75 18V18.5C15.75 20.02 16.98 21.25 18.5 21.25C20.02 21.25 21.25 20.02 21.25 18.5C21.25 16.98 20.02 15.75 18.5 15.75H2C1.59 15.75 1.25 15.41 1.25 15C1.25 14.59 1.59 14.25 2 14.25H18.5C20.84 14.25 22.75 16.16 22.75 18.5C22.75 20.84 20.84 22.75 18.5 22.75Z" fill="#0092B8"/>
+        <path d="M18.5 12.75H2C1.59 12.75 1.25 12.41 1.25 12C1.25 11.59 1.59 11.25 2 11.25H18.5C20.02 11.25 21.25 10.02 21.25 8.5C21.25 6.98 20.02 5.75 18.5 5.75C16.98 5.75 15.75 6.98 15.75 8.5V9C15.75 9.41 15.41 9.75 15 9.75C14.59 9.75 14.25 9.41 14.25 9V8.5C14.25 6.16 16.16 4.25 18.5 4.25C20.84 4.25 22.75 6.16 22.75 8.5C22.75 10.84 20.84 12.75 18.5 12.75Z" fill="#0092B8"/>
+        <path d="M9.31 9.75012H2C1.59 9.75012 1.25 9.41012 1.25 9.00012C1.25 8.59012 1.59 8.25012 2 8.25012H9.31C10.38 8.25012 11.25 7.38012 11.25 6.31012C11.25 5.24012 10.38 4.37012 9.31 4.37012C8.24 4.37012 7.37 5.24012 7.37 6.31012V6.69012C7.37 7.10012 7.03 7.44012 6.62 7.44012C6.21 7.44012 5.87 7.11012 5.87 6.69012V6.31012C5.87 4.41012 7.41 2.87012 9.31 2.87012C11.21 2.87012 12.75 4.41012 12.75 6.31012C12.75 8.21012 11.21 9.75012 9.31 9.75012Z" fill="#0092B8"/>
+      </g>
+    </g>
+    <defs><clipPath id="clip_wind"><rect width="24" height="24" fill="white"/></clipPath></defs>
   </svg>
 );
+
 export const IconShield2 = () => (
-  <svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="#2d2d2d" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round">
-    <path d="M12 2L4 6v6c0 5 3.5 9 8 10.5C16.5 21 20 17 20 12V6L12 2z"/>
+  <svg width="24" height="24" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">
+    <g clipPath="url(#clip_shield2)">
+      <mask id="mask_shield2" style={{maskType:"luminance"}} maskUnits="userSpaceOnUse" x="0" y="0" width="24" height="24">
+        <path d="M24 0H0V24H24V0Z" fill="white"/>
+      </mask>
+      <g mask="url(#mask_shield2)">
+        <path d="M10.49 2.23055L5.50003 4.11055C4.35003 4.54055 3.41003 5.90055 3.41003 7.12055V14.5505C3.41003 15.7305 4.19003 17.2805 5.14003 17.9905L9.44003 21.2005C10.85 22.2605 13.17 22.2605 14.58 21.2005L18.88 17.9905C19.83 17.2805 20.61 15.7305 20.61 14.5505V7.12055C20.61 5.89055 19.67 4.53055 18.52 4.10055L13.53 2.23055C12.68 1.92055 11.32 1.92055 10.49 2.23055Z" stroke="#0A0A0A" strokeWidth="1.5" strokeLinecap="round" strokeLinejoin="round"/>
+      </g>
+    </g>
+    <defs><clipPath id="clip_shield2"><rect width="24" height="24" fill="white"/></clipPath></defs>
   </svg>
 );
+
+// Наши Гарантии
 export const IconShieldBig = () => (
-  <svg width="33" height="33" viewBox="0 0 33 33" fill="none" stroke="#2d2d2d" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round">
-    <path d="M16.5 2.5L4 8v8c0 6.5 5 12 12.5 14C29 28 34 22.5 34 16V8L16.5 2.5z"/>
+  <svg width="33" height="33" viewBox="0 0 33 33" fill="none" xmlns="http://www.w3.org/2000/svg">
+    <g clipPath="url(#clip_shieldbig)">
+      <mask id="mask_shieldbig" style={{maskType:"luminance"}} maskUnits="userSpaceOnUse" x="0" y="0" width="33" height="33">
+        <path d="M33 0H0V33H33V0Z" fill="white"/>
+      </mask>
+      <g mask="url(#mask_shieldbig)">
+        <path d="M14.4238 3.06725L7.56255 5.65225C5.9813 6.2435 4.6888 8.1135 4.6888 9.791V20.0072C4.6888 21.6297 5.7613 23.7609 7.06755 24.7372L12.98 29.1509C14.9188 30.6084 18.1088 30.6084 20.0475 29.1509L25.96 24.7372C27.2663 23.7609 28.3388 21.6297 28.3388 20.0072V9.791C28.3388 8.09975 27.0463 6.22975 25.465 5.6385L18.6038 3.06725C17.435 2.641 15.565 2.641 14.4238 3.06725Z" stroke="#029061" strokeWidth="2.5" strokeLinecap="round" strokeLinejoin="round"/>
+      </g>
+    </g>
+    <defs><clipPath id="clip_shieldbig"><rect width="33" height="33" fill="white"/></clipPath></defs>
   </svg>
 );
+
 export const IconTickCircle = () => (
-  <svg width="33" height="33" viewBox="0 0 33 33" fill="none" stroke="#2d2d2d" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round">
-    <circle cx="16.5" cy="16.5" r="13"/>
-    <path d="M10 16.5l5 5 9-9"/>
+  <svg width="33" height="33" viewBox="0 0 33 33" fill="none" xmlns="http://www.w3.org/2000/svg">
+    <g clipPath="url(#clip_tick)">
+      <mask id="mask_tick" style={{maskType:"luminance"}} maskUnits="userSpaceOnUse" x="0" y="0" width="33" height="33">
+        <path d="M33 0H0V33H33V0Z" fill="white"/>
+      </mask>
+      <g mask="url(#mask_tick)">
+        <path d="M16.5 30.25C24.0625 30.25 30.25 24.0625 30.25 16.5C30.25 8.9375 24.0625 2.75 16.5 2.75C8.9375 2.75 2.75 8.9375 2.75 16.5C2.75 24.0625 8.9375 30.25 16.5 30.25Z" stroke="#029061" strokeWidth="2.5" strokeLinecap="round" strokeLinejoin="round"/>
+        <path d="M10.6562 16.4996L14.5475 20.3909L22.3438 12.6084" stroke="#029061" strokeWidth="2.5" strokeLinecap="round" strokeLinejoin="round"/>
+      </g>
+    </g>
+    <defs><clipPath id="clip_tick"><rect width="33" height="33" fill="white"/></clipPath></defs>
   </svg>
 );
+
+// Наши Гарантии 3 — STROKE ONLY
 export const IconSettings = () => (
-  <svg width="33" height="33" viewBox="0 0 33 33" fill="none" stroke="#2d2d2d" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round">
-    <circle cx="16.5" cy="16.5" r="4"/>
-    <path d="M16.5 3v4M16.5 26v4M3 16.5h4M26 16.5h4M6.8 6.8l2.8 2.8M23.4 23.4l2.8 2.8M6.8 26.2l2.8-2.8M23.4 9.6l2.8-2.8"/>
+  <svg width="33" height="33" viewBox="0 0 33 33" fill="none" xmlns="http://www.w3.org/2000/svg">
+    <g clipPath="url(#clip_settings)">
+      <mask id="mask_settings" style={{maskType:"luminance"}} maskUnits="userSpaceOnUse" x="0" y="0" width="33" height="33">
+        <path d="M33 0H0V33H33V0Z" fill="white"/>
+      </mask>
+      <g mask="url(#mask_settings)">
+        <path d="M16.5 21.6562C13.6538 21.6562 11.3438 19.3462 11.3438 16.5C11.3438 13.6538 13.6538 11.3438 16.5 11.3438C19.3462 11.3438 21.6562 13.6538 21.6562 16.5C21.6562 19.3462 19.3462 21.6562 16.5 21.6562ZM16.5 13.4062C14.795 13.4062 13.4062 14.795 13.4062 16.5C13.4062 18.205 14.795 19.5938 16.5 19.5938C18.205 19.5938 19.5938 18.205 19.5938 16.5C19.5938 14.795 18.205 13.4062 16.5 13.4062Z" stroke="#029061" strokeWidth="1.5" strokeLinecap="round" strokeLinejoin="round"/>
+        <path d="M20.9137 30.5117C20.625 30.5117 20.3363 30.4704 20.0475 30.4017C19.195 30.1679 18.48 29.6317 18.0262 28.8754L17.8612 28.6004C17.05 27.1979 15.9362 27.1979 15.125 28.6004L14.9738 28.8617C14.52 29.6317 13.805 30.1817 12.9525 30.4017C12.0863 30.6354 11.1925 30.5117 10.4363 30.0579L8.07125 28.6967C7.2325 28.2154 6.6275 27.4317 6.36625 26.4829C6.11875 25.5342 6.2425 24.5579 6.72375 23.7192C7.1225 23.0179 7.2325 22.3854 6.99875 21.9867C6.765 21.5879 6.17375 21.3542 5.3625 21.3542C3.355 21.3542 1.71875 19.7179 1.71875 17.7104V15.2904C1.71875 13.2829 3.355 11.6466 5.3625 11.6466C6.17375 11.6466 6.765 11.4129 6.99875 11.0141C7.2325 10.6154 7.13625 9.98289 6.72375 9.28164C6.2425 8.44289 6.11875 7.45289 6.36625 6.51789C6.61375 5.56914 7.21875 4.78539 8.07125 4.30414L10.45 2.94289C12.0037 2.02164 14.0525 2.55789 14.9875 4.13914L15.1525 4.41414C15.9638 5.81664 17.0775 5.81664 17.8888 4.41414L18.04 4.15289C18.975 2.55789 21.0238 2.02164 22.5913 2.95664L24.9562 4.31789C25.795 4.79914 26.4 5.58289 26.6612 6.53164C26.9087 7.48039 26.785 8.45664 26.3037 9.29539C25.905 9.99664 25.795 10.6291 26.0288 11.0279C26.2625 11.4266 26.8538 11.6604 27.665 11.6604C29.6725 11.6604 31.3088 13.2966 31.3088 15.3042V17.7242C31.3088 19.7317 29.6725 21.3679 27.665 21.3679C26.8538 21.3679 26.2625 21.6017 26.0288 22.0004C25.795 22.3992 25.8912 23.0317 26.3037 23.7329C26.785 24.5717 26.9225 25.5617 26.6612 26.4967C26.4137 27.4454 25.8088 28.2292 24.9562 28.7104L22.5775 30.0717C22.055 30.3604 21.4912 30.5117 20.9137 30.5117Z" stroke="#029061" strokeWidth="1.5" strokeLinecap="round" strokeLinejoin="round"/>
+      </g>
+    </g>
+    <defs><clipPath id="clip_settings"><rect width="33" height="33" fill="white"/></clipPath></defs>
+  </svg>
+);
+
+// CTA — телефон STROKE ONLY
+export const IconPhone = () => (
+  <svg width="24" height="24" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">
+    <mask id="mask_phone" style={{maskType:"luminance"}} maskUnits="userSpaceOnUse" x="0" y="0" width="24" height="24">
+      <path d="M24 0H0V24H24V0Z" fill="white"/>
+    </mask>
+    <g mask="url(#mask_phone)">
+      <path d="M17.45 22.75C16.32 22.75 15.13 22.48 13.9 21.96C12.7 21.45 11.49 20.75 10.31 19.9C9.14 19.04 8.01 18.08 6.94 17.03C5.88 15.96 4.92 14.83 4.07 13.67C3.21 12.47 2.52 11.27 2.03 10.11C1.51 8.87 1.25 7.67 1.25 6.54C1.25 5.76 1.39 5.02 1.66 4.33C1.94 3.62 2.39 2.96 3 2.39C3.77 1.63 4.65 1.25 5.59 1.25C5.98 1.25 6.38 1.34 6.72 1.5C7.11 1.68 7.44 1.95 7.68 2.31L10 5.58C10.21 5.87 10.37 6.15 10.48 6.43C10.61 6.73 10.68 7.03 10.68 7.32C10.68 7.7 10.57 8.07 10.36 8.42C10.21 8.69 9.98 8.98 9.69 9.27L9.01 9.98C9.16 10.26 9.4 10.62 9.86 11.16C10.35 11.72 10.81 12.23 11.27 12.7C11.86 13.28 12.35 13.74 12.81 14.12C13.38 14.6 13.75 14.84 13.97 14.95L14.68 14.28C14.99 13.97 15.29 13.74 15.58 13.59C16.13 13.25 16.83 13.19 17.53 13.48C17.79 13.59 18.07 13.74 18.37 13.95L21.69 16.31C22.06 16.56 22.33 16.88 22.49 17.26C22.64 17.64 22.71 17.99 22.71 18.34C22.71 18.82 22.6 19.3 22.39 19.75C22.18 20.2 21.92 20.59 21.59 20.95C21.02 21.58 20.4 22.03 19.68 22.32C18.99 22.6 18.24 22.75 17.45 22.75Z" stroke="#029061" strokeWidth="1.5" strokeLinecap="round" strokeLinejoin="round"/>
+      <path d="M18.5 9.75C18.09 9.75 17.75 9.41 17.75 9C17.75 8.64 17.39 7.89 16.79 7.25C16.2 6.62 15.55 6.25 15 6.25C14.59 6.25 14.25 5.91 14.25 5.5C14.25 5.09 14.59 4.75 15 4.75C15.97 4.75 16.99 5.27 17.88 6.22C18.71 7.11 19.25 8.2 19.25 9C19.25 9.41 18.91 9.75 18.5 9.75Z" stroke="#029061" strokeWidth="1.5" strokeLinecap="round" strokeLinejoin="round"/>
+      <path d="M22 9.75C21.59 9.75 21.25 9.41 21.25 9C21.25 5.55 18.45 2.75 15 2.75C14.59 2.75 14.25 2.41 14.25 2C14.25 1.59 14.59 1.25 15 1.25C19.27 1.25 22.75 4.73 22.75 9C22.75 9.41 22.41 9.75 22 9.75Z" stroke="#029061" strokeWidth="1.5" strokeLinecap="round" strokeLinejoin="round"/>
+    </g>
+  </svg>
+);
+
+// CTA — WhatsApp
+export const IconEnvelope = () => (
+  <svg width="30" height="30" viewBox="0 0 30 30" fill="none" xmlns="http://www.w3.org/2000/svg">
+    <g clipPath="url(#clip_wa)">
+      <mask id="mask_wa" style={{maskType:"luminance"}} maskUnits="userSpaceOnUse" x="0" y="0" width="30" height="30">
+        <path d="M30 0H0V30H30V0Z" fill="white"/>
+      </mask>
+      <g mask="url(#mask_wa)">
+        <path d="M8.625 25.75C10.5 26.875 12.75 27.5 15 27.5C21.875 27.5 27.5 21.875 27.5 15C27.5 8.125 21.875 2.5 15 2.5C8.125 2.5 2.5 8.125 2.5 15C2.5 17.25 3.125 19.375 4.125 21.25L3.05055 25.3825C2.80715 26.3186 3.67365 27.1646 4.60374 26.8989L8.625 25.75Z" stroke="white" strokeWidth="2" strokeMiterlimit="10" strokeLinecap="round" strokeLinejoin="round"/>
+        <path d="M20.625 18.5606C20.625 18.7631 20.5799 18.9712 20.4841 19.1737C20.3884 19.3762 20.2645 19.5675 20.1011 19.7475C19.825 20.0513 19.5209 20.2706 19.1772 20.4113C18.8392 20.5519 18.473 20.625 18.0786 20.625C17.5041 20.625 16.89 20.49 16.2421 20.2144C15.5944 19.9387 14.9465 19.5675 14.3043 19.1006C13.6564 18.6281 13.0424 18.105 12.4565 17.5256C11.8763 16.9406 11.3523 16.3275 10.8848 15.6862C10.4228 15.045 10.051 14.4037 9.78061 13.7681C9.5102 13.1269 9.375 12.5138 9.375 11.9288C9.375 11.5463 9.4426 11.1806 9.5778 10.8431C9.71301 10.5 9.92708 10.185 10.2257 9.90375C10.5862 9.54937 10.9805 9.375 11.3974 9.375C11.5552 9.375 11.7129 9.40875 11.8537 9.47625C12.0002 9.54375 12.1298 9.645 12.2312 9.79125L13.5381 11.6306C13.6395 11.7712 13.7128 11.9006 13.7635 12.0244C13.8141 12.1425 13.8424 12.2606 13.8424 12.3675C13.8424 12.5025 13.8029 12.6375 13.724 12.7669C13.6508 12.8963 13.5437 13.0312 13.4085 13.1662L12.9804 13.6106C12.9185 13.6725 12.8902 13.7456 12.8902 13.8356C12.8902 13.8806 12.8959 13.92 12.9071 13.965C12.9241 14.01 12.941 14.0438 12.9523 14.0775C13.0536 14.2631 13.2282 14.505 13.4761 14.7975C13.7296 15.09 14 15.3881 14.293 15.6862C14.5972 15.9844 14.8901 16.26 15.1888 16.5131C15.4816 16.7606 15.7239 16.9294 15.9154 17.0306C15.9774 17.0925 16.107 17.0981 16.1576 17.0981C16.2535 17.0981 16.3266 17.0644 16.3886 17.0025L16.8167 16.5806C16.9576 16.44 17.0929 16.3331 17.2224 16.2656C17.352 16.1869 17.4815 16.1475 17.6224 16.1475C17.7294 16.1475 17.8421 16.17 17.966 16.2206C18.09 16.2712 18.2195 16.3444 18.3604 16.44L20.225 17.7619C20.3715 17.8631 20.4729 17.9813 20.5349 18.1219C20.5913 18.2625 20.625 18.4031 20.625 18.5606Z" stroke="white" strokeWidth="2" strokeMiterlimit="10"/>
+      </g>
+    </g>
+    <defs><clipPath id="clip_wa"><rect width="30" height="30" fill="white"/></clipPath></defs>
+  </svg>
+);
+
+// Стрелка — чистая нормальная
+export const IconArrow = () => (
+  <svg width="20" height="16" viewBox="0 0 20 16" fill="none" xmlns="http://www.w3.org/2000/svg">
+    <path d="M1 8H19" stroke="white" strokeWidth="2" strokeLinecap="round"/>
+    <path d="M12 1L19 8L12 15" stroke="white" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round"/>
+  </svg>
+);
+
+export const IconArrowGreen = () => (
+  <svg width="20" height="16" viewBox="0 0 20 16" fill="none" xmlns="http://www.w3.org/2000/svg">
+    <path d="M1 8H19" stroke="white" strokeWidth="2" strokeLinecap="round"/>
+    <path d="M12 1L19 8L12 15" stroke="white" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round"/>
   </svg>
 );
