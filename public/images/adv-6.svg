@@ -1,13 +1,13 @@
-<svg preserveAspectRatio="none" width="100%" height="100%" overflow="visible" style="display: block;" viewBox="0 0 27.4989 27.5" fill="#1a1a1a" xmlns="http://www.w3.org/2000/svg">
+<svg preserveAspectRatio="none" width="100%" height="100%" overflow="visible" style="display: block;" viewBox="0 0 27.4989 27.5" fill="none" xmlns="http://www.w3.org/2000/svg">
 <g id="Group">
-<path id="Vector" opacity="0.4" d="M1.25 13.75H3.175" stroke="#1a1a1a" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"/>
-<path id="Vector_2" opacity="0.4" d="M24.4239 13.75H26.2489" stroke="#1a1a1a" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"/>
-<path id="Vector_3" d="M4.91211 22.5875L6.27461 21.225" stroke="#1a1a1a" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"/>
-<path id="Vector_4" d="M21.2989 6.19999L22.5864 4.91249" stroke="#1a1a1a" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"/>
-<path id="Vector_5" opacity="0.4" d="M13.75 26.25V24.325" stroke="#1a1a1a" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"/>
-<path id="Vector_6" opacity="0.4" d="M13.75 3.075V1.25" stroke="#1a1a1a" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"/>
-<path id="Vector_7" d="M22.5881 22.5875L21.2256 21.225" stroke="#1a1a1a" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"/>
-<path id="Vector_8" d="M6.19961 6.19999L4.91211 4.91249" stroke="#1a1a1a" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"/>
-<path id="Vector_9" d="M14.1009 8.17496L15.4509 11.825C15.4884 11.925 15.5759 12.0125 15.6759 12.05L19.3259 13.4C19.6509 13.525 19.6509 13.9875 19.3259 14.1L15.6759 15.45C15.5759 15.4875 15.4884 15.575 15.4509 15.675L14.1009 19.325C13.9759 19.65 13.5134 19.65 13.4009 19.325L12.0509 15.675C12.0134 15.575 11.9259 15.4875 11.8259 15.45L8.17587 14.1C7.85087 13.975 7.85087 13.5125 8.17587 13.4L11.8259 12.05C11.9259 12.0125 12.0134 11.925 12.0509 11.825L13.4009 8.17496C13.5259 7.84996 13.9884 7.84996 14.1009 8.17496Z" stroke="#1a1a1a" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"/>
+<path id="Vector" opacity="0.4" d="M1.25 13.75H3.175" stroke="#2d2d2d" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"/>
+<path id="Vector_2" opacity="0.4" d="M24.4239 13.75H26.2489" stroke="#2d2d2d" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"/>
+<path id="Vector_3" d="M4.91211 22.5875L6.27461 21.225" stroke="#2d2d2d" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"/>
+<path id="Vector_4" d="M21.2989 6.19999L22.5864 4.91249" stroke="#2d2d2d" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"/>
+<path id="Vector_5" opacity="0.4" d="M13.75 26.25V24.325" stroke="#2d2d2d" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"/>
+<path id="Vector_6" opacity="0.4" d="M13.75 3.075V1.25" stroke="#2d2d2d" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"/>
+<path id="Vector_7" d="M22.5881 22.5875L21.2256 21.225" stroke="#2d2d2d" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"/>
+<path id="Vector_8" d="M6.19961 6.19999L4.91211 4.91249" stroke="#2d2d2d" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"/>
+<path id="Vector_9" d="M14.1009 8.17496L15.4509 11.825C15.4884 11.925 15.5759 12.0125 15.6759 12.05L19.3259 13.4C19.6509 13.525 19.6509 13.9875 19.3259 14.1L15.6759 15.45C15.5759 15.4875 15.4884 15.575 15.4509 15.675L14.1009 19.325C13.9759 19.65 13.5134 19.65 13.4009 19.325L12.0509 15.675C12.0134 15.575 11.9259 15.4875 11.8259 15.45L8.17587 14.1C7.85087 13.975 7.85087 13.5125 8.17587 13.4L11.8259 12.05C11.9259 12.0125 12.0134 11.925 12.0509 11.825L13.4009 8.17496C13.5259 7.84996 13.9884 7.84996 14.1009 8.17496Z" stroke="#2d2d2d" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"/>
 </g>
 </svg>
