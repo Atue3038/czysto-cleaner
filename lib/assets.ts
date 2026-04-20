@@ -6,7 +6,7 @@
  *   2. Все компоненты автоматически переключатся на локальные файлы
  */
 
-const USE_LOCAL = true; // ← поставь true после скачивания ассетов
+const USE_LOCAL = false; // ← поставь true после скачивания ассетов
 
 function asset(local: string, figma: string) {
   return USE_LOCAL ? local : figma;
