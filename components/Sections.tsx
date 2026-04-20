@@ -1,4 +1,5 @@
 "use client";
+import React from "react";
 import Link from "next/link";
 import { useLang } from "@/lib/LanguageContext";
 import { t } from "@/lib/translations";
@@ -20,17 +21,42 @@ const SEC = "max-w-[1200px] mx-auto px-[80px] py-[96px] pb-[104px] max-md:px-6 m
 
 export function VideoSection() {
   const { lang } = useLang();
+  const [playing, setPlaying] = React.useState(false);
+  const videoRef = React.useRef<HTMLVideoElement>(null);
+
+  const handlePlay = () => {
+    if (videoRef.current) {
+      videoRef.current.play();
+      setPlaying(true);
+    }
+  };
+
   return (
     <section className="bg-[#f9fafb]">
       <div className={SEC}>
         <SecTitle>{t[lang].video.title}</SecTitle>
-        <div className="relative w-full h-[588px] max-md:h-[220px] bg-[#d9d9d9] rounded-[30px] max-md:rounded-[20px] overflow-hidden flex items-center justify-center"
-             style={{ boxShadow: "0px 0px 16px 0px rgba(0,0,0,0.25)" }}>
-          <div className="w-[80px] h-[80px] bg-white/80 rounded-full flex items-center justify-center cursor-pointer hover:bg-white transition-colors"
-               style={{ boxShadow: "0px 4px 16px rgba(0,0,0,0.2)" }}>
-            <svg width="28" height="32" viewBox="0 0 28 32" fill="none">
-              <path d="M2 2L26 16L2 30V2Z" fill="#00db9a" stroke="#00db9a" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round"/>
-            </svg>
+        <div className="flex justify-center">
+          <div className="relative w-[400px] max-md:w-full max-md:max-w-[320px] aspect-[9/16] rounded-[30px] max-md:rounded-[20px] overflow-hidden bg-black"
+               style={{ boxShadow: "0px 0px 16px 0px rgba(0,0,0,0.25)" }}>
+            <video
+              ref={videoRef}
+              src="/cleaning-video.mp4"
+              className="w-full h-full object-contain"
+              playsInline
+              controls={playing}
+              onEnded={() => setPlaying(false)}
+            />
+            {!playing && (
+              <div className="absolute inset-0 flex items-center justify-center bg-black/20 cursor-pointer"
+                   onClick={handlePlay}>
+                <div className="w-[80px] h-[80px] bg-white/90 rounded-full flex items-center justify-center hover:bg-white transition-colors"
+                     style={{ boxShadow: "0px 4px 20px rgba(0,0,0,0.25)" }}>
+                  <svg width="28" height="32" viewBox="0 0 28 32" fill="none">
+                    <path d="M2 2L26 16L2 30V2Z" fill="#00db9a" stroke="#00db9a" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round"/>
+                  </svg>
+                </div>
+              </div>
+            )}
           </div>
         </div>
       </div>

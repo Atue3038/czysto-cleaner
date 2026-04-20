@@ -17,7 +17,7 @@ export default function Navbar() {
   const langRef = useRef<HTMLDivElement>(null);
 
   const LINKS = [
-    { label: tr.services,  href: "#advantages" },
+    { label: tr.services,  href: "#included" },
     { label: tr.prices,    href: "#prices" },
     { label: tr.packages,  href: "#packages" },
     { label: tr.equipment, href: "#equipment" },
