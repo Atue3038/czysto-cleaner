@@ -1,0 +1,25 @@
+@import url('https://fonts.googleapis.com/css2?family=Manrope:wght@400;500;600;700;800&family=Inter:wght@400;500;600;700&display=swap');
+
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+@layer base {
+  * { box-sizing: border-box; margin: 0; padding: 0; }
+  html { scroll-behavior: smooth; }
+  body { font-family: 'Inter', sans-serif; background: #fff; color: #000; overflow-x: hidden; }
+}
+
+@layer utilities {
+  .font-manrope { font-family: 'Manrope', sans-serif; }
+  .font-inter   { font-family: 'Inter', sans-serif; }
+
+  /* gradient used in packages popular card */
+  .bg-pkg-gradient {
+    background: linear-gradient(114.98deg, #00bc82 6.42%, #00b8d4 90.42%);
+  }
+  /* gradient used in CTA section */
+  .bg-cta-gradient {
+    background: linear-gradient(133.99deg, #00bc7f 7.86%, #00b8d8 94.72%);
+  }
+}
