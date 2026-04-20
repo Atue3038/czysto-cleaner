@@ -14,7 +14,7 @@ export default function Navbar() {
   const [langOpen, setLangOpen] = useState(false);
   const { lang, setLang } = useLang();
   const tr = t[lang].nav;
-  const langRef = useRef<HTMLDivElement>(null);
+  const langRef = useRef<HTMLLIElement>(null);
 
   const LINKS = [
     { label: tr.services,  href: "#included" },
