@@ -6,6 +6,7 @@ import { t } from "@/lib/translations";
 const EQUIPMENT = [
   {
     video: "/Kirby.mp4",
+    poster: "/kirby-poster.jpg",
     titleKey: "Система глубокой очистки Kirby",
     titlePL: "System głębokiego czyszczenia Kirby",
     titleENG: "Kirby Deep Cleaning System",
@@ -34,6 +35,7 @@ const EQUIPMENT = [
   },
   {
     video: "/SantoemmaSabrina.mp4",
+    poster: "/sabrina-poster.jpg",
     titleKey: "Экстракторная чистка — Santoemma Sabrina",
     titlePL: "Czyszczenie ekstraktorowe — Santoemma Sabrina",
     titleENG: "Extractor Cleaning — Santoemma Sabrina",
@@ -62,6 +64,7 @@ const EQUIPMENT = [
   },
   {
     video: "/Karcher.mp4",
+    poster: "/karcher-poster.jpg",
     titleKey: "Паровая дезинфекция — Karcher",
     titlePL: "Dezynfekcja parowa — Karcher",
     titleENG: "Steam Disinfection — Karcher",
@@ -90,7 +93,7 @@ const EQUIPMENT = [
   },
 ];
 
-function VideoBlock({ src }: { src: string }) {
+function VideoBlock({ src, poster }: { src: string; poster: string }) {
   const [playing, setPlaying] = useState(false);
   const ref = useRef<HTMLVideoElement>(null);
 
@@ -105,9 +108,10 @@ function VideoBlock({ src }: { src: string }) {
       <video
         ref={ref}
         src={src}
+        poster={poster}
         className="w-full h-full object-cover"
         playsInline
-        preload="metadata"
+        preload="none"
         controls={playing}
         onEnded={() => setPlaying(false)}
       />
@@ -193,7 +197,7 @@ export default function EquipmentShowcase() {
           {EQUIPMENT.map((item, i) => (
             <div key={i} className={`flex gap-12 items-center ${i % 2 === 1 ? "flex-row-reverse" : ""}`}>
               <div className="flex-1">
-                <VideoBlock src={item.video} />
+                <VideoBlock src={item.video} poster={item.poster} />
               </div>
               <div className="flex-1">
                 <DescBlock item={item} lang={lang as "RU" | "PL" | "ENG"} index={i} />
@@ -212,7 +216,7 @@ export default function EquipmentShowcase() {
           >
             {EQUIPMENT.map((item, i) => (
               <div key={i} className="min-w-full snap-center flex flex-col gap-5 px-1">
-                <VideoBlock src={item.video} />
+                <VideoBlock src={item.video} poster={item.poster} />
                 <DescBlock item={item} lang={lang as "RU" | "PL" | "ENG"} index={i} />
               </div>
             ))}
