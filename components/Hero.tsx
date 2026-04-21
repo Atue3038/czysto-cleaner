@@ -13,8 +13,8 @@ export default function Hero() {
   return (
     <section className="relative mt-[104px] max-lg:mt-[80px] h-[559px] max-md:min-h-[380px] max-md:h-auto overflow-hidden bg-white">
       <div className="absolute inset-0">
-        <Image src={ASSETS.heroBg} alt="" fill className="object-cover" style={{ opacity: 0.30 }} priority unoptimized />
-        <div className="absolute inset-0 bg-white/70" />
+        <Image src={ASSETS.heroBg} alt="" fill className="object-cover" style={{ opacity: 0.6 }} priority unoptimized />
+        <div className="absolute inset-0 bg-white/40" />
       </div>
       <div className="relative z-10 h-full flex items-center justify-center px-6 py-16">
         <div className="flex flex-col items-center gap-14 max-w-[835px] text-center">
