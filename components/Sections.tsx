@@ -302,11 +302,22 @@ export function CTA() {
 }
 
 export function Footer() {
+  const { lang } = useLang();
+  const footerText: Record<string, string> = {
+    RU: "Профессиональная химчистка мебели и матрасов.",
+    PL: "Profesjonalne czyszczenie tapicerki i materacy.",
+    ENG: "Professional furniture and mattress cleaning.",
+  };
+  const region: Record<string, string> = {
+    RU: "Польша · Варшава и окрестности",
+    PL: "Polska · Warszawa i okolice",
+    ENG: "Poland · Warsaw and surroundings",
+  };
   return (
     <footer className="bg-[#1a1a1a] px-[80px] py-10 text-center max-md:px-6">
       <p className="font-inter text-[13px] text-white/45 leading-7">
-        © 2024 Czysto Cleaner. Профессиональная химчистка мебели и матрасов.<br/>
-        Польша · Варшава и окрестности
+        © 2024 Czysto Cleaner. {footerText[lang]}<br/>
+        {region[lang]}
       </p>
     </footer>
   );
