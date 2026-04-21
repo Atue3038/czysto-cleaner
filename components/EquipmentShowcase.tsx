@@ -214,12 +214,35 @@ export default function EquipmentShowcase() {
             className="flex overflow-x-auto snap-x snap-mandatory gap-0"
             style={{ scrollbarWidth: "none", msOverflowStyle: "none" }}
           >
-            {EQUIPMENT.map((item, i) => (
+            {EQUIPMENT.map((item, i) => {
+              const titleMap = { RU: item.titleKey, PL: item.titlePL, ENG: item.titleENG };
+              const subtitle = item.subtitle[lang as "RU" | "PL" | "ENG"];
+              const points = item.points[lang as "RU" | "PL" | "ENG"];
+              return (
               <div key={i} className="min-w-full snap-center flex flex-col gap-5 px-1">
+                {/* Заголовок сверху */}
+                <h3 className="font-manrope font-bold text-[22px] text-black leading-snug">
+                  {titleMap[lang as "RU" | "PL" | "ENG"]}
+                </h3>
+                {/* Видео */}
                 <VideoBlock src={item.video} poster={item.poster} />
-                <DescBlock item={item} lang={lang as "RU" | "PL" | "ENG"} index={i} />
+                {/* Подзаголовок и текст */}
+                <p className="font-inter text-[14px] text-black/60 italic">{subtitle}</p>
+                <ul className="flex flex-col gap-4">
+                  {points.map((point, j) => (
+                    <li key={j} className="flex items-start gap-3">
+                      <div className="shrink-0 w-[22px] h-[22px] rounded-full bg-[#d0fae5] flex items-center justify-center mt-0.5">
+                        <svg width="10" height="8" viewBox="0 0 10 8" fill="none">
+                          <path d="M1 4L3.5 6.5L9 1" stroke="#005E3F" strokeWidth="1.8" strokeLinecap="round" strokeLinejoin="round"/>
+                        </svg>
+                      </div>
+                      <span className="font-inter font-medium text-[15px] text-black/80 leading-relaxed">{point}</span>
+                    </li>
+                  ))}
+                </ul>
               </div>
-            ))}
+              );
+            })}
           </div>
 
           {/* Точки-навигация */}
