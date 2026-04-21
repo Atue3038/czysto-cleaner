@@ -44,6 +44,7 @@ export function VideoSection() {
               src="/cleaning-video.mp4"
               className="w-full h-full object-contain"
               playsInline
+              preload="metadata"
               controls={playing}
               onEnded={() => setPlaying(false)}
             />
@@ -52,7 +53,7 @@ export function VideoSection() {
                    onClick={handlePlay}>
                 <div className="w-[80px] h-[80px] bg-white/90 rounded-full flex items-center justify-center hover:bg-white transition-colors"
                      style={{ boxShadow: "0px 4px 20px rgba(0,0,0,0.25)" }}>
-                  <svg width="28" height="32" viewBox="0 0 28 32" fill="none">
+                  <svg width="28" height="32" viewBox="0 0 28 32" fill="none" style={{ transform: "translateX(3px)" }}>
                     <path d="M2 2L26 16L2 30V2Z" fill="#00db9a" stroke="#00db9a" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round"/>
                   </svg>
                 </div>

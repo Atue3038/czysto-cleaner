@@ -107,6 +107,7 @@ function VideoBlock({ src }: { src: string }) {
         src={src}
         className="w-full h-full object-cover"
         playsInline
+        preload="metadata"
         controls={playing}
         onEnded={() => setPlaying(false)}
       />
@@ -115,7 +116,7 @@ function VideoBlock({ src }: { src: string }) {
              onClick={handlePlay}>
           <div className="w-[64px] h-[64px] bg-white/90 rounded-full flex items-center justify-center hover:bg-white transition-colors"
                style={{ boxShadow: "0px 4px 16px rgba(0,0,0,0.25)" }}>
-            <svg width="22" height="26" viewBox="0 0 22 26" fill="none">
+            <svg width="22" height="26" viewBox="0 0 22 26" fill="none" style={{ transform: "translateX(2px)" }}>
               <path d="M2 2L20 13L2 24V2Z" fill="#00db9a" stroke="#00db9a" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round"/>
             </svg>
           </div>
