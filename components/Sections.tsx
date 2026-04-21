@@ -4,12 +4,13 @@ import Link from "next/link";
 import { useLang } from "@/lib/LanguageContext";
 import { t } from "@/lib/translations";
 import {
-  IconStar2, IconBroom, IconPhone, IconEnvelope, IconArrow,
+  IconStar2, IconBroom, IconKey, IconPhone, IconEnvelope, IconArrow,
   IconFlash, IconDrop, IconWind, IconShield2,
   IconShieldBig, IconTickCircle, IconSettings
 } from "@/components/Icons";
 
 const EQUIP_ICONS = [IconFlash, IconDrop, IconWind, IconShield2];
+const ADDITIONAL_ICONS = [IconBroom, IconKey];
 
 const SecTitle = ({ children }: { children: React.ReactNode }) => (
   <h2 className="font-manrope font-semibold text-[36px] max-md:text-[26px] text-black text-center mb-[72px] max-md:mb-10">
@@ -160,17 +161,27 @@ export function Additional() {
     <section className="bg-white">
       <div className={SEC}>
         <SecTitle>{tr.title}</SecTitle>
-        <div className="max-w-[961px] mx-auto bg-[#eef9ff] border border-[#abe1ff] rounded-[25px] px-12 pt-12 pb-[37px] flex gap-5 items-start max-md:flex-col max-md:px-6">
-          <div className="bg-[#00b8db] rounded-[22.5px] w-[45px] h-[45px] shrink-0 flex items-center justify-center">
-            <IconBroom />
-          </div>
-          <div className="flex flex-col gap-8 flex-1 pt-2">
-            <div className="flex flex-col gap-6">
-              <p className="font-manrope font-bold text-[22px] text-black tracking-[0.66px]">{tr.name}</p>
-              <p className="font-inter font-medium text-[16px] text-black tracking-[0.48px]">{tr.desc}</p>
+        <div className="flex flex-wrap gap-8 justify-center max-md:flex-col max-md:items-center">
+          {tr.items.map((item, i) => {
+            const Icon = ADDITIONAL_ICONS[i];
+            return (
+            <div key={i}
+                 className="bg-[#eef9ff] border border-[#abe1ff] rounded-[25px] px-10 pt-10 pb-10 w-[464px] max-md:w-full flex gap-5 items-start transition-shadow duration-200"
+                 onMouseEnter={e => (e.currentTarget.style.boxShadow = "0px 6px 20px 0px rgba(0,0,0,0.12)")}
+                 onMouseLeave={e => (e.currentTarget.style.boxShadow = "none")}>
+              <div className="bg-[#00b8db] rounded-[22.5px] w-[50px] h-[50px] shrink-0 flex items-center justify-center">
+                <Icon />
+              </div>
+              <div className="flex flex-col gap-5 flex-1 pt-1">
+                <div className="flex flex-col gap-4">
+                  <p className="font-manrope font-bold text-[22px] text-black tracking-[0.66px]">{item.name}</p>
+                  <p className="font-inter font-medium text-[15px] text-black/80 tracking-[0.48px] leading-relaxed">{item.desc}</p>
+                </div>
+                <p className="font-manrope font-semibold text-[28px] text-[#0092b8] tracking-[0.96px]">{item.price}</p>
+              </div>
             </div>
-            <p className="font-manrope font-semibold text-[32px] text-[#0092b8] tracking-[0.96px]">500 zl</p>
-          </div>
+            );
+          })}
         </div>
       </div>
     </section>
@@ -257,19 +268,28 @@ export function CTA() {
               {tr.subtitle}
             </p>
           </div>
-          <div className="flex gap-6 items-center flex-wrap justify-center max-sm:flex-col max-sm:w-full">
+          <div className="flex gap-4 items-center flex-wrap justify-center max-sm:flex-col max-sm:w-full">
             <Link href="tel:+48575673474"
-                  className="inline-flex items-center gap-3 bg-white text-[#029061] font-manrope font-semibold text-[24px] px-8 py-[14px] rounded-[15px] hover:opacity-90 transition-opacity max-sm:justify-center max-sm:w-full"
+                  className="inline-flex items-center gap-3 bg-white text-[#029061] font-manrope font-semibold text-[22px] px-7 py-[13px] rounded-[15px] hover:opacity-90 transition-opacity max-sm:justify-center max-sm:w-full"
                   style={{ boxShadow: "0px 4px 16px 0px rgba(0,0,0,0.15)" }}>
               <IconPhone />
               +48 575 673 474
             </Link>
             <Link href="https://wa.me/48575673474" target="_blank" rel="noopener noreferrer"
-                  className="inline-flex items-center gap-3 bg-white/10 text-white border border-white font-manrope font-semibold text-[24px] px-8 py-[14px] rounded-[15px] hover:bg-white/20 transition-colors max-sm:justify-center max-sm:w-full"
+                  className="inline-flex items-center gap-3 bg-white/10 text-white border border-white font-manrope font-semibold text-[22px] px-7 py-[13px] rounded-[15px] hover:bg-white/20 transition-colors max-sm:justify-center max-sm:w-full"
                   style={{ boxShadow: "0px 4px 16px 0px rgba(0,0,0,0.15)" }}>
               <IconEnvelope />
               WhatsApp
               <IconArrow />
+            </Link>
+            <Link href="mailto:czysto.cleaner@gmail.com"
+                  className="inline-flex items-center gap-3 bg-white/10 text-white border border-white font-manrope font-semibold text-[22px] px-7 py-[13px] rounded-[15px] hover:bg-white/20 transition-colors max-sm:justify-center max-sm:w-full"
+                  style={{ boxShadow: "0px 4px 16px 0px rgba(0,0,0,0.15)" }}>
+              <svg width="26" height="26" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">
+                <rect x="2" y="4" width="20" height="16" rx="2" stroke="white" strokeWidth="1.8" strokeLinejoin="round"/>
+                <path d="M2 7L12 13L22 7" stroke="white" strokeWidth="1.8" strokeLinecap="round" strokeLinejoin="round"/>
+              </svg>
+              Email
             </Link>
           </div>
         </div>

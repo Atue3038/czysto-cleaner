@@ -2,12 +2,12 @@ import Navbar from "@/components/Navbar";
 import Hero from "@/components/Hero";
 import Advantages from "@/components/Advantages";
 import Included from "@/components/Included";
+import PromoBanner from "@/components/PromoBanner";
+import EquipmentShowcase from "@/components/EquipmentShowcase";
 import {
-  VideoSection,
   Prices,
   Packages,
   Additional,
-  Equipment,
   Guarantees,
   CTA,
   Footer,
@@ -21,11 +21,11 @@ export default function Home() {
         <Hero />
         <Advantages />
         <Included />
-        <VideoSection />
+        <PromoBanner />
         <Prices />
         <Packages />
         <Additional />
-        <Equipment />
+        <EquipmentShowcase />
         <Guarantees />
         <CTA />
       </main>
