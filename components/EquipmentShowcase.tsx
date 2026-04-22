@@ -284,7 +284,7 @@ export default function EquipmentShowcase() {
         </div>
 
         {/* MOBILE — свайп */}
-        <div className="md:hidden flex flex-col gap-4">
+        <div className="md:hidden flex flex-col gap-3">
           <div
             ref={scrollRef}
             onScroll={handleScroll}
@@ -296,24 +296,25 @@ export default function EquipmentShowcase() {
               const subtitle = item.subtitle[lang as "RU" | "PL" | "ENG"];
               const points = item.points[lang as "RU" | "PL" | "ENG"];
               return (
-              <div key={i} className="min-w-full snap-center flex flex-col gap-5 px-1">
+              <div key={i} className="min-w-full snap-center flex flex-col gap-3 px-1">
                 {/* Заголовок сверху */}
-                <h3 className="font-manrope font-bold text-[22px] text-black leading-snug">
+                <h3 className="font-manrope font-bold text-[20px] text-black leading-tight">
                   {titleMap[lang as "RU" | "PL" | "ENG"]}
                 </h3>
                 {/* Видео */}
                 <VideoBlock src={item.video} poster={item.poster} />
-                {/* Подзаголовок и текст */}
-                <p className="font-inter text-[14px] text-black/60 italic">{subtitle}</p>
-                <ul className="flex flex-col gap-4">
+                {/* Подзаголовок */}
+                <p className="font-inter text-[13px] text-black/60 italic leading-snug">{subtitle}</p>
+                {/* Список */}
+                <ul className="flex flex-col gap-2.5">
                   {points.map((point, j) => (
-                    <li key={j} className="flex items-start gap-3">
-                      <div className="shrink-0 w-[22px] h-[22px] rounded-full bg-[#d0fae5] flex items-center justify-center mt-0.5">
-                        <svg width="10" height="8" viewBox="0 0 10 8" fill="none">
+                    <li key={j} className="flex items-start gap-2.5">
+                      <div className="shrink-0 w-[18px] h-[18px] rounded-full bg-[#d0fae5] flex items-center justify-center mt-0.5">
+                        <svg width="9" height="7" viewBox="0 0 10 8" fill="none">
                           <path d="M1 4L3.5 6.5L9 1" stroke="#005E3F" strokeWidth="1.8" strokeLinecap="round" strokeLinejoin="round"/>
                         </svg>
                       </div>
-                      <span className="font-inter font-medium text-[15px] text-black/80 leading-relaxed">{point}</span>
+                      <span className="font-inter font-medium text-[14px] text-black/80 leading-snug">{point}</span>
                     </li>
                   ))}
                 </ul>
@@ -323,7 +324,7 @@ export default function EquipmentShowcase() {
           </div>
 
           {/* Точки-навигация */}
-          <div className="flex justify-center gap-2 mt-2">
+          <div className="flex justify-center gap-2 mt-1">
             {EQUIPMENT.map((_, i) => (
               <button
                 key={i}

@@ -29,7 +29,8 @@ export default function Advantages() {
                   <Icon />
                 </div>
                 <p className="font-manrope font-bold text-[20px] text-black/80 tracking-[0.6px] mb-4 leading-snug">{c.title}</p>
-                <p className="font-inter font-medium text-[16px] text-black/80 tracking-[0.48px] leading-relaxed">{c.text}</p>
+                <p className="font-inter font-medium text-[16px] text-black/80 tracking-[0.48px] leading-relaxed"
+                   dangerouslySetInnerHTML={{ __html: c.text }} />
               </div>
             );
           })}
