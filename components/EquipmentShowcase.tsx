@@ -95,6 +95,7 @@ const EQUIPMENT = [
 
 function VideoBlock({ src, poster }: { src: string; poster: string }) {
   const [playing, setPlaying] = useState(false);
+  const [fullscreen, setFullscreen] = useState(false);
   const ref = useRef<HTMLVideoElement>(null);
 
   const handlePlay = () => {
@@ -102,31 +103,72 @@ function VideoBlock({ src, poster }: { src: string; poster: string }) {
     setPlaying(true);
   };
 
+  const toggleFullscreen = () => {
+    setFullscreen(!fullscreen);
+  };
+
   return (
-    <div className="relative w-full rounded-[20px] overflow-hidden bg-black shrink-0"
-         style={{ aspectRatio: "1/1.5", boxShadow: "0px 4px 20px rgba(0,0,0,0.18)" }}>
-      <video
-        ref={ref}
-        src={src}
-        poster={poster}
-        className="w-full h-full object-cover"
-        playsInline
-        preload="none"
-        controls={playing}
-        onEnded={() => setPlaying(false)}
-      />
-      {!playing && (
-        <div className="absolute inset-0 flex items-center justify-center bg-black/25 cursor-pointer"
-             onClick={handlePlay}>
-          <div className="w-[64px] h-[64px] bg-white/90 rounded-full flex items-center justify-center hover:bg-white transition-colors"
-               style={{ boxShadow: "0px 4px 16px rgba(0,0,0,0.25)" }}>
-            <svg width="22" height="26" viewBox="0 0 22 26" fill="none" style={{ transform: "translateX(2px)" }}>
-              <path d="M2 2L20 13L2 24V2Z" fill="#00db9a" stroke="#00db9a" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round"/>
-            </svg>
+    <>
+      <div className="relative w-full rounded-[20px] overflow-hidden bg-black shrink-0"
+           style={{ aspectRatio: "1/1", boxShadow: "0px 4px 20px rgba(0,0,0,0.18)" }}>
+        <video
+          ref={ref}
+          src={src}
+          poster={poster}
+          className="w-full h-full object-cover"
+          playsInline
+          preload="none"
+          controls={playing}
+          onEnded={() => setPlaying(false)}
+        />
+        {!playing && (
+          <div className="absolute inset-0 flex items-center justify-center bg-black/25 cursor-pointer"
+               onClick={handlePlay}>
+            <div className="w-[64px] h-[64px] bg-white/90 rounded-full flex items-center justify-center hover:bg-white transition-colors"
+                 style={{ boxShadow: "0px 4px 16px rgba(0,0,0,0.25)" }}>
+              <svg width="22" height="26" viewBox="0 0 22 26" fill="none" style={{ transform: "translateX(2px)" }}>
+                <path d="M2 2L20 13L2 24V2Z" fill="#00db9a" stroke="#00db9a" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round"/>
+              </svg>
+            </div>
           </div>
+        )}
+        {playing && (
+          <button
+            onClick={toggleFullscreen}
+            className="absolute top-3 right-3 w-[40px] h-[40px] bg-black/50 rounded-full flex items-center justify-center hover:bg-black/70 transition-colors z-10"
+            style={{ boxShadow: "0px 2px 8px rgba(0,0,0,0.3)" }}>
+            <svg width="20" height="20" viewBox="0 0 20 20" fill="none">
+              <path d="M3 3H8M3 3V8M3 3L8 8M17 3H12M17 3V8M17 3L12 8M3 17H8M3 17V12M3 17L8 12M17 17H12M17 17V12M17 17L12 12" 
+                    stroke="white" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round"/>
+            </svg>
+          </button>
+        )}
+      </div>
+      
+      {/* Fullscreen modal */}
+      {fullscreen && (
+        <div className="fixed inset-0 bg-black/95 z-50 flex items-center justify-center p-4"
+             onClick={toggleFullscreen}>
+          <button
+            onClick={toggleFullscreen}
+            className="absolute top-4 right-4 w-[48px] h-[48px] bg-white/10 rounded-full flex items-center justify-center hover:bg-white/20 transition-colors"
+            style={{ boxShadow: "0px 4px 16px rgba(0,0,0,0.5)" }}>
+            <svg width="24" height="24" viewBox="0 0 24 24" fill="none">
+              <path d="M18 6L6 18M6 6L18 18" stroke="white" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round"/>
+            </svg>
+          </button>
+          <video
+            src={src}
+            poster={poster}
+            className="max-w-full max-h-full"
+            playsInline
+            controls
+            autoPlay
+            onClick={(e) => e.stopPropagation()}
+          />
         </div>
       )}
-    </div>
+    </>
   );
 }
 
@@ -162,6 +204,7 @@ export default function EquipmentShowcase() {
   const { lang } = useLang();
   const [active, setActive] = useState(0);
   const scrollRef = useRef<HTMLDivElement>(null);
+  const autoplayRef = useRef<NodeJS.Timeout | null>(null);
 
   const handleDotClick = (i: number) => {
     setActive(i);
@@ -169,6 +212,11 @@ export default function EquipmentShowcase() {
     if (el) {
       el.scrollTo({ left: i * el.offsetWidth, behavior: "smooth" });
     }
+    // Сброс автоплея при ручном взаимодействии
+    if (autoplayRef.current) {
+      clearInterval(autoplayRef.current);
+    }
+    startAutoplay();
   };
 
   const handleScroll = () => {
@@ -178,6 +226,35 @@ export default function EquipmentShowcase() {
       setActive(idx);
     }
   };
+
+  const startAutoplay = () => {
+    if (autoplayRef.current) {
+      clearInterval(autoplayRef.current);
+    }
+    autoplayRef.current = setInterval(() => {
+      setActive((prev) => {
+        const next = (prev + 1) % EQUIPMENT.length;
+        const el = scrollRef.current;
+        if (el) {
+          el.scrollTo({ left: next * el.offsetWidth, behavior: "smooth" });
+        }
+        return next;
+      });
+    }, 5000); // 5 секунд
+  };
+
+  // Автоплей на мобильных
+  React.useEffect(() => {
+    const isMobile = window.innerWidth < 768;
+    if (isMobile) {
+      startAutoplay();
+    }
+    return () => {
+      if (autoplayRef.current) {
+        clearInterval(autoplayRef.current);
+      }
+    };
+  }, []);
 
   const titles: Record<string, string> = {
     RU: "Как работает наше оборудование",

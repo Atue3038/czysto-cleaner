@@ -13,18 +13,17 @@ export default function Hero() {
   return (
     <section className="relative mt-[104px] max-lg:mt-[80px] h-[559px] max-md:min-h-[380px] max-md:h-auto overflow-hidden bg-white">
       <div className="absolute inset-0">
-        <Image src={ASSETS.heroBg} alt="" fill className="object-cover object-center md:object-center object-right" priority unoptimized />
-
+        <Image src={ASSETS.heroBg} alt="" fill className="object-cover object-bottom" priority unoptimized />
       </div>
       <div className="relative z-10 h-full flex items-center justify-center px-6 py-16">
         <div className="flex flex-col items-center gap-14 max-w-[835px] text-center">
           <div className="flex flex-col items-center gap-8">
             <h1 className="font-manrope font-semibold text-[48px] max-md:text-[32px] leading-[1.18] text-black"
-                style={{ textShadow: "0px 0px 12px rgba(255,255,255,0.15)" }}>
+                style={{ filter: "drop-shadow(0 0 12px rgba(255, 255, 255, 0.15))" }}>
               {tr.title}
             </h1>
             <p className="font-inter font-medium text-[20px] max-md:text-[16px] text-black/70"
-               style={{ textShadow: "0px 0px 12px rgba(255,255,255,0.15)" }}>
+               style={{ filter: "drop-shadow(0 0 12px rgba(255, 255, 255, 0.15))" }}>
               {tr.subtitle}
             </p>
           </div>
