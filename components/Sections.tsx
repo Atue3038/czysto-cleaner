@@ -6,7 +6,7 @@ import { t } from "@/lib/translations";
 import {
   IconStar2, IconBroom, IconKey, IconPhone, IconEnvelope, IconArrow,
   IconFlash, IconDrop, IconWind, IconShield2,
-  IconShieldBig, IconTickCircle, IconSettings
+  IconShieldBig, IconTickCircle, IconSettings, IconGuarEquip
 } from "@/components/Icons";
 
 const EQUIP_ICONS = [IconFlash, IconDrop, IconWind, IconShield2];
@@ -228,7 +228,7 @@ export function Equipment() {
 export function Guarantees() {
   const { lang } = useLang();
   const tr = t[lang].guarantees;
-  const ICONS = [IconShieldBig, IconTickCircle, IconSettings];
+  const ICONS = [IconShieldBig, IconTickCircle, IconGuarEquip];
   return (
     <section className="bg-white">
       <div className={SEC}>

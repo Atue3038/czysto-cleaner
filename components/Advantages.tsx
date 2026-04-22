@@ -1,9 +1,9 @@
 "use client";
 import { useLang } from "@/lib/LanguageContext";
 import { t } from "@/lib/translations";
-import { IconClean, IconShield, IconClock, IconHeart, IconStar, IconLeaf } from "@/components/Icons";
+import { IconShield, IconStages, IconHeart, IconStar, IconShieldBig, IconProfEquip } from "@/components/Icons";
 
-const ICONS = [IconClean, IconShield, IconClock, IconHeart, IconStar, IconLeaf];
+const ICONS = [IconShield, IconStages, IconHeart, IconProfEquip, IconStar, IconShieldBig];
 
 export default function Advantages() {
   const { lang } = useLang();
@@ -26,7 +26,9 @@ export default function Advantages() {
                    onMouseEnter={e => (e.currentTarget.style.boxShadow = "0px 6px 20px 0px rgba(0,0,0,0.18)")}
                    onMouseLeave={e => (e.currentTarget.style.boxShadow = "0px 2px 8px 0px rgba(0,0,0,0.10)")}>
                 <div className="bg-[#d0fae5] rounded-[10px] w-[65px] h-[65px] flex items-center justify-center mb-5">
-                  <Icon />
+                  <div className="w-[30px] h-[30px] flex items-center justify-center [&_svg]:w-full [&_svg]:h-full [&_img]:w-full [&_img]:h-full">
+                    <Icon />
+                  </div>
                 </div>
                 <p className="font-manrope font-bold text-[20px] text-black/80 tracking-[0.6px] mb-4 leading-snug">{c.title}</p>
                 <p className="font-inter font-medium text-[16px] text-black/80 tracking-[0.48px] leading-relaxed"
