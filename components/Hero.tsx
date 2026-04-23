@@ -19,17 +19,17 @@ export default function Hero() {
         <div className="flex flex-col items-center gap-14 max-w-[835px] text-center">
           <div className="flex flex-col items-center gap-8">
             <h1 className="font-manrope font-semibold text-[48px] max-md:text-[32px] leading-[1.18] text-black"
-                style={{ filter: "drop-shadow(0 0 12px rgba(255, 255, 255, 0.15))" }}>
+                style={{ filter: "drop-shadow(0 0 16px rgba(255, 255, 255, 0.55))" }}>
               {tr.title}
             </h1>
             <p className="font-inter font-medium text-[20px] max-md:text-[16px] text-black/70"
-               style={{ filter: "drop-shadow(0 0 12px rgba(255, 255, 255, 0.15))" }}>
+               style={{ filter: "drop-shadow(0 0 16px rgba(255, 255, 255, 0.55))" }}>
               {tr.subtitle}
             </p>
           </div>
           <Link href="#contacts"
                 className="inline-flex items-center gap-2.5 bg-[#00db9a] text-white font-manrope font-semibold text-[20px] px-6 py-3 rounded-[15px] hover:bg-[#00c48a] transition-colors"
-                style={{ boxShadow: "0px 0px 20px 0px rgba(0,0,0,0.10)" }}>
+                style={{ boxShadow: "0px 0px 20px 0px rgba(255,255,255,0.55)" }}>
             {tr.button}
             <IconArrow />
           </Link>

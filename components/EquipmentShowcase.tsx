@@ -232,6 +232,11 @@ export default function EquipmentShowcase() {
       clearInterval(autoplayRef.current);
     }
     autoplayRef.current = setInterval(() => {
+      // Не листаем если какое-то видео играет
+      const videos = scrollRef.current?.querySelectorAll("video");
+      const isPlaying = Array.from(videos || []).some(v => !v.paused);
+      if (isPlaying) return;
+
       setActive((prev) => {
         const next = (prev + 1) % EQUIPMENT.length;
         const el = scrollRef.current;
@@ -240,7 +245,7 @@ export default function EquipmentShowcase() {
         }
         return next;
       });
-    }, 5000); // 5 секунд
+    }, 5000);
   };
 
   // Автоплей на мобильных

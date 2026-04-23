@@ -4,8 +4,8 @@ export const t = {
   RU: {
     nav: { services: "Услуги", prices: "Прайс", packages: "Пакеты", equipment: "Оборудование", contacts: "Контакты", order: "Заказать" },
     hero: {
-      title: "Химчистка мебели с дезинфекцией",
-      subtitle: "Удаляем клещей\u00a0•\u00a0Сушка за 2–4 часа\u00a0•\u00a0Безопасно для детей",
+      title: "Глубокая чистка и клининг нового уровня",
+      subtitle: "Возвращаем дому свежесть, чистоту и ощущение нового пространства",
       button: "Заказать чистку",
     },
     advantages: {
@@ -74,8 +74,8 @@ export const t = {
   PL: {
     nav: { services: "Usługi", prices: "Cennik", packages: "Pakiety", equipment: "Sprzęt", contacts: "Kontakt", order: "Zamów" },
     hero: {
-      title: "Czyszczenie tapicerki z dezynfekcją",
-      subtitle: "Usuwamy roztocza\u00a0•\u00a0Suszenie 2–4h\u00a0•\u00a0Bezpieczne dla dzieci",
+      title: "Głębokie czyszczenie i sprzątanie nowego poziomu",
+      subtitle: "Przywracamy domowi świeżość, czystość i poczucie nowej przestrzeni",
       button: "Zamów czyszczenie",
     },
     advantages: {
@@ -144,8 +144,8 @@ export const t = {
   ENG: {
     nav: { services: "Services", prices: "Prices", packages: "Packages", equipment: "Equipment", contacts: "Contacts", order: "Order" },
     hero: {
-      title: "Furniture Cleaning with Disinfection",
-      subtitle: "Removes mites\u00a0•\u00a0Drying in 2–4h\u00a0•\u00a0Safe for children",
+      title: "Deep Cleaning & Next-Level Service",
+      subtitle: "We bring freshness, cleanliness and the feeling of a new space back to your home",
       button: "Book a cleaning",
     },
     advantages: {
