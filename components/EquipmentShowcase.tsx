@@ -223,6 +223,13 @@ export default function EquipmentShowcase() {
     const el = scrollRef.current;
     if (el) {
       const idx = Math.round(el.scrollLeft / el.offsetWidth);
+      if (idx !== active) {
+        // Пользователь сам свайпнул — убиваем автоплей навсегда
+        if (autoplayRef.current) {
+          clearInterval(autoplayRef.current);
+          autoplayRef.current = null;
+        }
+      }
       setActive(idx);
     }
   };
