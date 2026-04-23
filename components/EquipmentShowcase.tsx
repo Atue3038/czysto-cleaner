@@ -245,7 +245,7 @@ export default function EquipmentShowcase() {
         }
         return next;
       });
-    }, 5000);
+    }, 10000);
   };
 
   // Автоплей на мобильных
