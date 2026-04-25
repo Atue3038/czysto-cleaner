@@ -203,10 +203,9 @@ function DescBlock({ item, lang, index }: { item: typeof EQUIPMENT[0]; lang: "RU
   );
 }
 
-// Видео клиентки — оригинальные пропорции 320:568, уменьшенное
+// Видео клиентки — оригинальные пропорции 320:568
 function ClientVideoBlock({ src, poster }: { src: string; poster?: string }) {
   const [playing, setPlaying] = useState(false);
-  const [fullscreen, setFullscreen] = useState(false);
   const ref = useRef<HTMLVideoElement>(null);
 
   const handlePlay = () => {
@@ -215,57 +214,30 @@ function ClientVideoBlock({ src, poster }: { src: string; poster?: string }) {
   };
 
   return (
-    <>
-      {/* На мобильном занимает всю ширину, на десктопе ограничен и по центру */}
-      <div className="relative rounded-[20px] overflow-hidden bg-black mx-auto md:max-w-[400px]"
-           style={{ aspectRatio: "320/568", boxShadow: "0px 4px 20px rgba(0,0,0,0.18)" }}>
-        <video
-          ref={ref}
-          src={src}
-          poster={poster}
-          className="w-full h-full object-cover"
-          playsInline
-          preload="none"
-          controls={playing}
-          onEnded={() => setPlaying(false)}
-        />
-        {!playing && (
-          <div className="absolute inset-0 flex items-center justify-center bg-black/25 cursor-pointer"
-               onClick={handlePlay}>
-            <div className="w-[64px] h-[64px] bg-white/90 rounded-full flex items-center justify-center hover:bg-white transition-colors"
-                 style={{ boxShadow: "0px 4px 16px rgba(0,0,0,0.25)" }}>
-              <svg width="22" height="26" viewBox="0 0 22 26" fill="none" style={{ transform: "translateX(2px)" }}>
-                <path d="M2 2L20 13L2 24V2Z" fill="#00db9a" stroke="#00db9a" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round"/>
-              </svg>
-            </div>
+    <div className="relative rounded-[20px] overflow-hidden bg-black mx-auto md:max-w-[400px]"
+         style={{ aspectRatio: "320/568", boxShadow: "0px 4px 20px rgba(0,0,0,0.18)" }}>
+      <video
+        ref={ref}
+        src={src}
+        poster={poster}
+        className="w-full h-full object-cover"
+        playsInline
+        preload="none"
+        controls={playing}
+        onEnded={() => setPlaying(false)}
+      />
+      {!playing && (
+        <div className="absolute inset-0 flex items-center justify-center bg-black/25 cursor-pointer"
+             onClick={handlePlay}>
+          <div className="w-[64px] h-[64px] bg-white/90 rounded-full flex items-center justify-center hover:bg-white transition-colors"
+               style={{ boxShadow: "0px 4px 16px rgba(0,0,0,0.25)" }}>
+            <svg width="22" height="26" viewBox="0 0 22 26" fill="none" style={{ transform: "translateX(2px)" }}>
+              <path d="M2 2L20 13L2 24V2Z" fill="#00db9a" stroke="#00db9a" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round"/>
+            </svg>
           </div>
-        )}
-        {playing && (
-          <button
-            onClick={() => setFullscreen(true)}
-            className="absolute top-3 right-3 w-[40px] h-[40px] bg-black/50 rounded-full flex items-center justify-center hover:bg-black/70 transition-colors z-10">
-            <svg width="20" height="20" viewBox="0 0 20 20" fill="none">
-              <path d="M3 3H8M3 3V8M3 3L8 8M17 3H12M17 3V8M17 3L12 8M3 17H8M3 17V12M3 17L8 12M17 17H12M17 17V12M17 17L12 12"
-                    stroke="white" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round"/>
-            </svg>
-          </button>
-        )}
-      </div>
-
-      {fullscreen && (
-        <div className="fixed inset-0 bg-black/95 z-50 flex items-center justify-center p-4"
-             onClick={() => setFullscreen(false)}>
-          <button onClick={() => setFullscreen(false)}
-                  className="absolute top-4 right-4 w-[48px] h-[48px] bg-white/10 rounded-full flex items-center justify-center hover:bg-white/20 transition-colors">
-            <svg width="24" height="24" viewBox="0 0 24 24" fill="none">
-              <path d="M18 6L6 18M6 6L18 18" stroke="white" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round"/>
-            </svg>
-          </button>
-          <video src={src} className="max-w-full max-h-full" playsInline controls autoPlay
-                 onClick={(e) => e.stopPropagation()} />
         </div>
       )}
-    </>
+    </div>
   );
 }
 
@@ -459,17 +431,7 @@ export default function EquipmentShowcase() {
           <div className="relative w-full max-w-[320px] md:max-w-[380px]">
             {/* Тень-подсветка снизу */}
             <div className="absolute -bottom-3 left-4 right-4 h-8 rounded-[20px] bg-[#00db9a]/20 blur-xl" />
-
             <ClientVideoBlock src="/client-tools.mp4" poster="/client-tools-poster.jpg" />
-
-            {/* Бейдж сверху */}
-            <div className="absolute top-3 left-3 flex items-center gap-1.5 bg-white/90 backdrop-blur-sm rounded-full px-3 py-1.5"
-                 style={{ boxShadow: "0px 2px 8px rgba(0,0,0,0.12)" }}>
-              <div className="w-2 h-2 rounded-full bg-[#00db9a] animate-pulse" />
-              <span className="font-inter font-semibold text-[11px] text-black/70 uppercase tracking-wider">
-                {lang === "RU" ? "Реальная съёмка" : lang === "PL" ? "Prawdziwe nagranie" : "Real footage"}
-              </span>
-            </div>
           </div>
 
           {/* Подпись снизу */}
