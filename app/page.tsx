@@ -1,3 +1,4 @@
+import CookieBanner from "@/components/CookieBanner";
 import Navbar from "@/components/Navbar";
 import Hero from "@/components/Hero";
 import Advantages from "@/components/Advantages";
@@ -30,6 +31,7 @@ export default function Home() {
         <CTA />
       </main>
       <Footer />
+      <CookieBanner />
     </>
   );
 }
