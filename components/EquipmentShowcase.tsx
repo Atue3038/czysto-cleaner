@@ -293,11 +293,11 @@ export default function EquipmentShowcase() {
     if (el) {
       const idx = Math.round(el.scrollLeft / el.offsetWidth);
       if (idx !== active) {
-        // Пользователь сам свайпнул — убиваем автоплей навсегда
+        // Пользователь сам свайпнул — убиваем автоплей навсегда для этой сессии
         if (autoplayRef.current) {
           clearInterval(autoplayRef.current);
-          autoplayRef.current = null;
         }
+        autoplayRef.current = undefined as any;
       }
       setActive(idx);
     }
@@ -324,17 +324,36 @@ export default function EquipmentShowcase() {
     }, 10000);
   };
 
-  // Автоплей на мобильных
+  // Автоплей только пока блок виден на экране
   React.useEffect(() => {
     const isMobile = window.innerWidth < 768;
-    if (isMobile) {
-      startAutoplay();
-    }
-    return () => {
-      if (autoplayRef.current) {
-        clearInterval(autoplayRef.current);
-      }
-    };
+    if (!isMobile) return;
+
+    const section = scrollRef.current?.closest("section");
+    if (!section) return;
+
+    const observer = new IntersectionObserver(
+      (entries) => {
+        entries.forEach((entry) => {
+          if (entry.isIntersecting) {
+            // Блок виден — запускаем если пользователь не свайпал вручную
+            if (autoplayRef.current === undefined || autoplayRef.current !== null) {
+              startAutoplay();
+            }
+          } else {
+            // Блок ушёл — останавливаем
+            if (autoplayRef.current) {
+              clearInterval(autoplayRef.current);
+              autoplayRef.current = null;
+            }
+          }
+        });
+      },
+      { threshold: 0.3 } // Блок должен быть виден хотя бы на 30%
+    );
+
+    observer.observe(section);
+    return () => observer.disconnect();
   }, []);
 
   const titles: Record<string, string> = {
