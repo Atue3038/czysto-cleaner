@@ -201,7 +201,7 @@ function DescBlock({ item, lang, index }: { item: typeof EQUIPMENT[0]; lang: "RU
 }
 
 // Видео клиентки — оригинальные пропорции 320:568, уменьшенное
-function ClientVideoBlock({ src }: { src: string }) {
+function ClientVideoBlock({ src, poster }: { src: string; poster?: string }) {
   const [playing, setPlaying] = useState(false);
   const [fullscreen, setFullscreen] = useState(false);
   const ref = useRef<HTMLVideoElement>(null);
@@ -219,6 +219,7 @@ function ClientVideoBlock({ src }: { src: string }) {
         <video
           ref={ref}
           src={src}
+          poster={poster}
           className="w-full h-full object-cover"
           playsInline
           preload="none"
@@ -421,11 +422,43 @@ export default function EquipmentShowcase() {
         </div>
 
         {/* Видео клиентки */}
-        <div className="mt-10">
-          <h3 className="font-manrope font-bold text-[22px] max-md:text-[18px] text-black mb-4">
-            {lang === "RU" ? "Наши инструменты в деле" : lang === "PL" ? "Nasze narzędzia w akcji" : "Our tools in action"}
-          </h3>
-          <ClientVideoBlock src="/client-tools.mp4" />
+        <div className="mt-16 flex flex-col items-center">
+
+          {/* Заголовок с разделителем */}
+          <div className="flex items-center gap-4 w-full mb-8">
+            <div className="flex-1 h-px bg-gradient-to-r from-transparent to-[#d0fae5]" />
+            <h3 className="font-manrope font-bold text-[20px] max-md:text-[17px] text-black/80 whitespace-nowrap">
+              {lang === "RU" ? "Наши инструменты в деле" : lang === "PL" ? "Nasze narzędzia w akcji" : "Our tools in action"}
+            </h3>
+            <div className="flex-1 h-px bg-gradient-to-l from-transparent to-[#d0fae5]" />
+          </div>
+
+          {/* Карточка с видео */}
+          <div className="relative w-full max-w-[320px] md:max-w-[380px]">
+            {/* Тень-подсветка снизу */}
+            <div className="absolute -bottom-3 left-4 right-4 h-8 rounded-[20px] bg-[#00db9a]/20 blur-xl" />
+
+            <ClientVideoBlock src="/client-tools.mp4" poster="/client-tools-poster.jpg" />
+
+            {/* Бейдж сверху */}
+            <div className="absolute top-3 left-3 flex items-center gap-1.5 bg-white/90 backdrop-blur-sm rounded-full px-3 py-1.5"
+                 style={{ boxShadow: "0px 2px 8px rgba(0,0,0,0.12)" }}>
+              <div className="w-2 h-2 rounded-full bg-[#00db9a] animate-pulse" />
+              <span className="font-inter font-semibold text-[11px] text-black/70 uppercase tracking-wider">
+                {lang === "RU" ? "Реальная съёмка" : lang === "PL" ? "Prawdziwe nagranie" : "Real footage"}
+              </span>
+            </div>
+          </div>
+
+          {/* Подпись снизу */}
+          <p className="mt-5 font-inter text-[13px] text-black/40 text-center max-w-[280px] leading-snug">
+            {lang === "RU"
+              ? "Так выглядит наша работа изнутри"
+              : lang === "PL"
+              ? "Tak wygląda nasza praca od środka"
+              : "A look at our work from the inside"}
+          </p>
+
         </div>
 
       </div>
