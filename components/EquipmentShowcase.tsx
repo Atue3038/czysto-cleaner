@@ -355,6 +355,14 @@ export default function EquipmentShowcase() {
           </div>
         </div>
 
+        {/* Видео клиентки */}
+        <div className="mt-10">
+          <h3 className="font-manrope font-bold text-[22px] max-md:text-[18px] text-black mb-4">
+            {lang === "RU" ? "Наши инструменты в деле" : lang === "PL" ? "Nasze narzędzia w akcji" : "Our tools in action"}
+          </h3>
+          <VideoBlock src="/client-tools.mp4" poster="" />
+        </div>
+
       </div>
     </section>
   );
