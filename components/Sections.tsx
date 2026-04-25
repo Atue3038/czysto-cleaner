@@ -74,8 +74,10 @@ export function Prices() {
       <div className={SEC}>
         <SecTitle>{tr.title}</SecTitle>
         <div className="flex flex-wrap gap-12 justify-center max-md:flex-col max-md:items-center">
-          <div className="bg-white border border-[rgba(203,203,203,0.7)] rounded-[25px] px-10 py-12 w-[496px] max-md:w-full flex flex-col gap-6"
-               style={{ boxShadow: "0px 0px 16px 0px rgba(0,0,0,0.05)" }}>
+          <div className="bg-white border border-[rgba(203,203,203,0.7)] rounded-[25px] px-10 py-12 w-[496px] max-md:w-full flex flex-col gap-6 transition-shadow duration-200"
+               style={{ boxShadow: "0px 0px 16px 0px rgba(0,0,0,0.05)" }}
+               onMouseEnter={e => (e.currentTarget.style.boxShadow = "0px 6px 20px 0px rgba(0,0,0,0.12)")}
+               onMouseLeave={e => (e.currentTarget.style.boxShadow = "0px 0px 16px 0px rgba(0,0,0,0.05)")}>
             <p className="font-manrope font-bold text-[22px] text-black tracking-[0.66px]">{tr.sofas}</p>
             <div className="flex items-center justify-between">
               <div>
@@ -93,8 +95,10 @@ export function Prices() {
               <p className="font-manrope font-medium text-[24px] text-[#189966] tracking-[0.72px]">700 zl</p>
             </div>
           </div>
-          <div className="bg-white border border-[rgba(203,203,203,0.7)] rounded-[25px] px-10 py-12 w-[496px] max-md:w-full flex flex-col gap-6"
-               style={{ boxShadow: "0px 0px 16px 0px rgba(0,0,0,0.05)" }}>
+          <div className="bg-white border border-[rgba(203,203,203,0.7)] rounded-[25px] px-10 py-12 w-[496px] max-md:w-full flex flex-col gap-6 transition-shadow duration-200"
+               style={{ boxShadow: "0px 0px 16px 0px rgba(0,0,0,0.05)" }}
+               onMouseEnter={e => (e.currentTarget.style.boxShadow = "0px 6px 20px 0px rgba(0,0,0,0.12)")}
+               onMouseLeave={e => (e.currentTarget.style.boxShadow = "0px 0px 16px 0px rgba(0,0,0,0.05)")}>
             <p className="font-manrope font-bold text-[22px] text-black tracking-[0.66px]">{tr.mattresses}</p>
             <div className="flex items-center justify-between">
               <p className="font-inter font-medium text-[16px] text-black tracking-[0.48px]">{tr.single}</p>
@@ -170,7 +174,7 @@ export function Additional() {
                  className="bg-[#eef9ff] border border-[#abe1ff] rounded-[25px] px-10 pt-10 pb-10 w-[464px] max-md:w-full flex gap-5 items-start transition-shadow duration-200"
                  onMouseEnter={e => (e.currentTarget.style.boxShadow = "0px 6px 20px 0px rgba(0,0,0,0.12)")}
                  onMouseLeave={e => (e.currentTarget.style.boxShadow = "none")}>
-              <div className="bg-[#00b8db] rounded-[22.5px] w-[50px] h-[50px] shrink-0 flex items-center justify-center">
+              <div className="bg-[#00b8db] rounded-full w-[50px] h-[50px] shrink-0 flex items-center justify-center">
                 <Icon />
               </div>
               <div className="flex flex-col gap-5 flex-1 pt-1">

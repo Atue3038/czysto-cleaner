@@ -2,6 +2,9 @@
 import React, { useState, useRef } from "react";
 import { useLang } from "@/lib/LanguageContext";
 import { t } from "@/lib/translations";
+import { IconFlash, IconDrop, IconWind, IconShield2 } from "@/components/Icons";
+
+const EQUIP_ICONS = [IconFlash, IconDrop, IconWind, IconShield2];
 
 const EQUIPMENT = [
   {
@@ -459,6 +462,39 @@ export default function EquipmentShowcase() {
               : "A look at our work from the inside"}
           </p>
 
+        </div>
+
+        {/* Компактные карточки оборудования */}
+        <div className="mt-16">
+          <div className="flex items-center gap-4 w-full mb-8">
+            <div className="flex-1 h-px bg-gradient-to-r from-transparent to-[#d0fae5]" />
+            <h3 className="font-manrope font-bold text-[20px] max-md:text-[17px] text-black/80 whitespace-nowrap">
+              {lang === "RU" ? "Наш арсенал" : lang === "PL" ? "Nasz arsenał" : "Our arsenal"}
+            </h3>
+            <div className="flex-1 h-px bg-gradient-to-l from-transparent to-[#d0fae5]" />
+          </div>
+          <div className="grid grid-cols-2 md:grid-cols-4 gap-4">
+            {t[lang].equipment.items.map((e, i) => {
+              const Icon = EQUIP_ICONS[i];
+              return (
+              <div key={i}
+                   className="bg-white rounded-[20px] p-5 flex flex-col gap-4 transition-shadow duration-200"
+                   style={{ boxShadow: "0px 2px 8px 0px rgba(0,0,0,0.08)" }}
+                   onMouseEnter={ev => (ev.currentTarget.style.boxShadow = "0px 6px 20px 0px rgba(0,0,0,0.14)")}
+                   onMouseLeave={ev => (ev.currentTarget.style.boxShadow = "0px 2px 8px 0px rgba(0,0,0,0.08)")}>
+                <div className="bg-[#d0fae5] rounded-[10px] w-[50px] h-[50px] flex items-center justify-center shrink-0">
+                  <Icon />
+                </div>
+                <p className="font-manrope font-bold text-[17px] text-black leading-tight">{e.name}</p>
+                <ul className="flex flex-col gap-1.5">
+                  {e.items.map((li, j) => (
+                    <li key={j} className="font-inter text-[13px] text-black/55 leading-snug">{li}</li>
+                  ))}
+                </ul>
+              </div>
+              );
+            })}
+          </div>
         </div>
 
       </div>

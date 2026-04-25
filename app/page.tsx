@@ -8,7 +8,6 @@ import {
   Prices,
   Packages,
   Additional,
-  Equipment,
   Guarantees,
   CTA,
   Footer,
@@ -27,7 +26,6 @@ export default function Home() {
         <Packages />
         <Additional />
         <EquipmentShowcase />
-        <Equipment />
         <Guarantees />
         <CTA />
       </main>
