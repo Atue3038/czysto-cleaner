@@ -1,6 +1,7 @@
 import type { Metadata } from "next";
 import "./globals.css";
 import { LanguageProvider } from "@/lib/LanguageContext";
+import { Analytics } from "@vercel/analytics/react";
 
 export const metadata: Metadata = {
   title: "Czysto Cleaner — Химчистка мебели и матрасов с дезинфекцией | Варшава",
@@ -32,9 +33,9 @@ export const metadata: Metadata = {
     title: "Czysto Cleaner — Химчистка мебели с дезинфекцией | Варшава",
     description:
       "Профессиональная химчистка диванов, матрасов и ковров в Варшаве. Удаление клещей до 99%. Сушка 2–4 часа. Безопасно для детей.",
-    url: "https://czysto-cleaner.vercel.app",
+    url: "https://www.czysto-cleaner.pl",
     siteName: "Czysto Cleaner",
-    locale: "ru_RU",
+    locale: "pl_PL",
     type: "website",
   },
   robots: {
@@ -47,11 +48,12 @@ export default function RootLayout({
   children,
 }: Readonly<{ children: React.ReactNode }>) {
   return (
-    <html lang="ru" className="scroll-smooth">
+    <html lang="pl" className="scroll-smooth">
       <body>
         <LanguageProvider>
           {children}
         </LanguageProvider>
+        <Analytics />
       </body>
     </html>
   );
