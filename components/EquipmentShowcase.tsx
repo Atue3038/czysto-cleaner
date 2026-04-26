@@ -248,12 +248,15 @@ export default function EquipmentShowcase() {
   const autoplayRef = useRef<NodeJS.Timeout | null>(null);
 
   const handleDotClick = (i: number) => {
+    // Останавливаем все видео
+    const videos = scrollRef.current?.querySelectorAll("video");
+    videos?.forEach(v => { v.pause(); v.currentTime = 0; });
+
     setActive(i);
     const el = scrollRef.current;
     if (el) {
       el.scrollTo({ left: i * el.offsetWidth, behavior: "smooth" });
     }
-    // Сброс автоплея при ручном взаимодействии
     if (autoplayRef.current) {
       clearInterval(autoplayRef.current);
     }
@@ -265,7 +268,11 @@ export default function EquipmentShowcase() {
     if (el) {
       const idx = Math.round(el.scrollLeft / el.offsetWidth);
       if (idx !== active) {
-        // Пользователь сам свайпнул — убиваем автоплей навсегда для этой сессии
+        // Останавливаем все видео при свайпе
+        const videos = el.querySelectorAll("video");
+        videos?.forEach(v => { v.pause(); v.currentTime = 0; });
+
+        // Пользователь сам свайпнул — убиваем автоплей
         if (autoplayRef.current) {
           clearInterval(autoplayRef.current);
         }
@@ -289,6 +296,8 @@ export default function EquipmentShowcase() {
         const next = (prev + 1) % EQUIPMENT.length;
         const el = scrollRef.current;
         if (el) {
+          // Останавливаем все видео перед сменой слайда
+          el.querySelectorAll("video").forEach(v => { v.pause(); v.currentTime = 0; });
           el.scrollTo({ left: next * el.offsetWidth, behavior: "smooth" });
         }
         return next;
