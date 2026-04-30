@@ -4,17 +4,10 @@ import { LanguageProvider } from "@/lib/LanguageContext";
 import { Analytics } from "@vercel/analytics/react";
 
 export const metadata: Metadata = {
-  title: "Czysto Cleaner — Химчистка мебели и матрасов с дезинфекцией | Варшава",
+  title: "Czysto Cleaner — Głębokie czyszczenie i sprzątanie | Warszawa",
   description:
-    "Профессиональная химчистка диванов, матрасов и мягкой мебели в Варшаве. Удаление клещей, пятен и аллергенов. 3-ступенчатая очистка. Сушка за 2–4 часа. Безопасно для детей и животных. Выезд в день обращения.",
+    "Profesjonalne czyszczenie kanap, materaców i mebli tapicerowanych w Warszawie. Usuwanie roztoczy, plam i alergenów. Czyszczenie 3-etapowe. Suszenie w 2–4 godziny. Bezpieczne dla dzieci i zwierząt.",
   keywords: [
-    "химчистка мебели Варшава",
-    "химчистка дивана",
-    "чистка матраса",
-    "удаление клещей из дивана",
-    "химчистка мягкой мебели",
-    "чистка ковров Варшава",
-    "дезинфекция мебели",
     "pranie kanapy Warszawa",
     "pranie dywanów",
     "pranie materaca",
@@ -23,18 +16,27 @@ export const metadata: Metadata = {
     "usuwanie roztoczy",
     "sofa cleaning Warsaw",
     "mattress cleaning Warsaw",
-    "upholstery cleaning",
-    "furniture cleaning Poland",
     "Kirby cleaning",
-    "professional cleaning Warsaw",
+    "химчистка мебели Варшава",
   ],
   authors: [{ name: "Czysto Cleaner" }],
+  icons: {
+    icon: [
+      { url: "/favicon.ico" },
+      { url: "/favicon-192.png", sizes: "192x192", type: "image/png" },
+      { url: "/favicon-512.png", sizes: "512x512", type: "image/png" },
+    ],
+    apple: [
+      { url: "/apple-touch-icon.png", sizes: "180x180", type: "image/png" },
+    ],
+  },
   openGraph: {
-    title: "Czysto Cleaner — Химчистка мебели с дезинфекцией | Варшава",
+    title: "Czysto Cleaner — Głębokie czyszczenie i sprzątanie | Warszawa",
     description:
-      "Профессиональная химчистка диванов, матрасов и ковров в Варшаве. Удаление клещей до 99%. Сушка 2–4 часа. Безопасно для детей.",
+      "Profesjonalne czyszczenie kanap, materaców i mebli w Warszawie. Usuwanie roztoczy do 99%. Suszenie 2–4h. Bezpieczne dla dzieci.",
     url: "https://www.czysto-cleaner.pl",
     siteName: "Czysto Cleaner",
+    images: [{ url: "/favicon-512.png", width: 512, height: 512 }],
     locale: "pl_PL",
     type: "website",
   },
